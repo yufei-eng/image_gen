@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Image generation script using Gemini 3.1 Flash Image (Nano Banana 2) via Yunwu API."""
+"""Image generation script using Gemini 3.1 Flash Image via Compass LLM Proxy."""
 
 import asyncio
 import base64
@@ -9,17 +9,18 @@ import sys
 from pathlib import Path
 from datetime import datetime
 
-import httpx
+from google import genai
+from google.genai import types
 
 SCRIPT_DIR = Path(__file__).parent
 PROJECT_DIR = SCRIPT_DIR.parent
 CONFIG_PATHS = [
-    Path.home() / ".claude" / "skills" / "video-gen" / "config.json",
-    Path.home() / ".cursor" / "skills" / "video-gen" / "config.json",
     PROJECT_DIR / "config.json",
+    Path.home() / ".cursor" / "skills" / "image-gen" / "config.json",
+    Path.home() / ".claude" / "skills" / "image-gen" / "config.json",
 ]
 
-GEMINI_IMAGE_URL = "https://yunwu.ai/v1beta/models/gemini-3.1-flash-image-preview:generateContent"
+DEFAULT_IMAGE_MODEL = "gemini-3.1-flash-image-preview"
 
 TEST_SCENARIOS = {
     "S1_avatar": {
@@ -56,29 +57,79 @@ TEST_SCENARIOS = {
 }
 
 
-def load_api_key() -> str:
+DEFAULT_BASE_URL = "http://beeai.test.shopee.io/inbeeai/compass-api/v1"
+
+
+def load_config() -> dict:
+    """Load compass_api config from config.json files, with env var overrides."""
+    cfg: dict = {}
     for path in CONFIG_PATHS:
         if path.exists():
             try:
                 with open(path) as f:
-                    cfg = json.load(f)
-                key = cfg.get("YUNWU_API_KEY", "")
-                if key:
-                    return key
+                    file_cfg = json.load(f)
+                if "compass_api" in file_cfg:
+                    cfg = file_cfg["compass_api"]
+                    break
             except Exception:
                 continue
-    return os.getenv("YUNWU_API_KEY", "")
+
+    if os.environ.get("COMPASS_CLIENT_TOKEN"):
+        cfg["client_token"] = os.environ["COMPASS_CLIENT_TOKEN"]
+    if os.environ.get("COMPASS_BASE_URL"):
+        cfg["base_url"] = os.environ["COMPASS_BASE_URL"]
+
+    cfg.setdefault("base_url", DEFAULT_BASE_URL)
+    cfg.setdefault("image_model", DEFAULT_IMAGE_MODEL)
+    return cfg
+
+
+def _build_client(compass_cfg: dict) -> genai.Client:
+    """Build a Google GenAI client pointing at the Compass LLM Proxy."""
+    return genai.Client(
+        api_key=compass_cfg["client_token"],
+        http_options=types.HttpOptions(
+            base_url=compass_cfg["base_url"],
+        ),
+    )
+
+
+_GENAI_CLIENT: genai.Client | None = None
+
+
+def get_client() -> genai.Client:
+    global _GENAI_CLIENT
+    if _GENAI_CLIENT is None:
+        cfg = load_config()
+        if not cfg.get("client_token"):
+            print(
+                "ERROR: Compass API client_token not found.\n"
+                "Options:\n"
+                "  1. Set env var: export COMPASS_CLIENT_TOKEN='your_token'\n"
+                "  2. Copy config.json.example to config.json and fill in client_token"
+            )
+            sys.exit(1)
+        _GENAI_CLIENT = _build_client(cfg)
+    return _GENAI_CLIENT
+
+
+def get_model_name() -> str:
+    cfg = load_config()
+    return cfg.get("image_model", DEFAULT_IMAGE_MODEL)
 
 
 async def generate_image(
     prompt: str,
     output_path: str,
-    api_key: str,
+    api_key: str = None,
     reference_image: str = None,
     style_suffix: str = None,
 ) -> dict:
-    """Call Gemini 3.1 Flash Image API. Returns result dict."""
-    parts = []
+    """Call Gemini 3.1 Flash Image via Compass LLM Proxy. Returns result dict."""
+    client = get_client()
+    model = get_model_name()
+
+    parts: list[types.Part] = []
 
     if reference_image and os.path.exists(reference_image):
         with open(reference_image, "rb") as f:
@@ -86,56 +137,38 @@ async def generate_image(
         ext = os.path.splitext(reference_image)[1].lower()
         mime_map = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".webp": "image/webp"}
         mime_type = mime_map.get(ext, "image/jpeg")
-        parts.append({
-            "inlineData": {
-                "mimeType": mime_type,
-                "data": base64.b64encode(img_data).decode("utf-8"),
-            }
-        })
+        parts.append(types.Part.from_bytes(data=img_data, mime_type=mime_type))
 
     full_prompt = f"{prompt}, {style_suffix}" if style_suffix else prompt
-    parts.append({"text": full_prompt})
-
-    payload = {
-        "contents": [{"parts": parts}],
-        "generationConfig": {
-            "responseModalities": ["IMAGE", "TEXT"],
-            "responseMimeType": "text/plain",
-        },
-    }
+    parts.append(types.Part.from_text(text=full_prompt))
 
     try:
-        async with httpx.AsyncClient(timeout=120.0) as client:
-            resp = await client.post(
-                GEMINI_IMAGE_URL,
-                json=payload,
-                headers={
-                    "Content-Type": "application/json",
-                    "x-goog-api-key": api_key,
-                },
-            )
-            resp.raise_for_status()
-            result = resp.json()
+        response = await asyncio.to_thread(
+            client.models.generate_content,
+            model=model,
+            contents=[types.Content(role="user", parts=parts)],
+            config=types.GenerateContentConfig(
+                response_modalities=["IMAGE", "TEXT"],
+            ),
+        )
 
-        candidates = result.get("candidates", [])
-        if not candidates:
+        if not response.candidates:
             return {"success": False, "error": "No candidates in response"}
 
-        resp_parts = candidates[0].get("content", {}).get("parts", [])
-        image_b64 = None
+        image_data = None
         text_response = None
-        for part in resp_parts:
-            if "inlineData" in part:
-                image_b64 = part["inlineData"].get("data")
-            if "text" in part:
-                text_response = part["text"]
+        for part in response.candidates[0].content.parts:
+            if part.text:
+                text_response = part.text
+            if part.inline_data and part.inline_data.data:
+                image_data = part.inline_data.data
 
-        if not image_b64:
+        if not image_data:
             return {"success": False, "error": "No image data in response", "text": text_response}
 
         Path(output_path).parent.mkdir(parents=True, exist_ok=True)
         with open(output_path, "wb") as f:
-            f.write(base64.b64decode(image_b64))
+            f.write(image_data)
 
         return {"success": True, "output": output_path, "text": text_response}
 
@@ -145,13 +178,13 @@ async def generate_image(
 
 async def run_baseline(output_dir: str = None):
     """Run all 4 test scenarios with raw prompts (no optimization)."""
-    api_key = load_api_key()
-    if not api_key:
-        print("ERROR: YUNWU_API_KEY not found. Set it in config.json or environment.")
-        sys.exit(1)
+    get_client()
 
     if output_dir is None:
         output_dir = str(PROJECT_DIR / "test" / "results" / "baseline")
+
+    print(f"Model: {get_model_name()}")
+    print(f"Compass base_url: {load_config().get('base_url', 'N/A')}")
 
     results = {}
     for scenario_id, scenario in TEST_SCENARIOS.items():
@@ -164,7 +197,6 @@ async def run_baseline(output_dir: str = None):
         result = await generate_image(
             prompt=scenario["prompt"],
             output_path=output_path,
-            api_key=api_key,
             reference_image=scenario["reference_image"],
         )
 
@@ -194,10 +226,7 @@ async def run_with_skill(prompt_rewriter, output_dir: str, label: str = "skill")
     
     prompt_rewriter: callable(scenario_id, scenario_dict) -> rewritten_prompt_str
     """
-    api_key = load_api_key()
-    if not api_key:
-        print("ERROR: YUNWU_API_KEY not found.")
-        sys.exit(1)
+    get_client()
 
     results = {}
     for scenario_id, scenario in TEST_SCENARIOS.items():
@@ -211,7 +240,6 @@ async def run_with_skill(prompt_rewriter, output_dir: str, label: str = "skill")
         result = await generate_image(
             prompt=rewritten,
             output_path=output_path,
-            api_key=api_key,
             reference_image=scenario["reference_image"],
         )
 

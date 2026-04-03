@@ -46,6 +46,8 @@ Custom Skill v2 fuses 6 prompt engineering approaches:
 ```bash
 mkdir -p ~/.claude/skills/image-gen
 cp SKILL.md ~/.claude/skills/image-gen/SKILL.md
+cp scripts/main.py ~/.claude/skills/image-gen/main.py
+# Then configure your API token (see Setup section above)
 ```
 
 ### Cursor
@@ -56,8 +58,20 @@ cp SKILL.md ~/.cursor/skills/image-gen/SKILL.md
 
 ## Requirements
 
-- Gemini API access (via `generate_imagen` MCP tool or direct API)
-- `GEMINI_API_KEY` or `YUNWU_API_KEY` environment variable
+- Python 3.10+
+- `google-genai` package (`pip install google-genai`)
+- Compass LLM Proxy access (client_token)
+
+### Setup
+
+```bash
+# Option 1: Environment variable
+export COMPASS_CLIENT_TOKEN="your_token"
+
+# Option 2: Config file
+cp config.json.example config.json
+# Edit config.json and fill in your client_token
+```
 
 ## Project Structure
 
