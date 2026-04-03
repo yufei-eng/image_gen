@@ -1,0 +1,39 @@
+{
+  "S1_avatar": {
+    "prompt_adherence": 5.0,
+    "visual_quality": 4.5,
+    "aesthetics": 4.5,
+    "scenario_specific": 5.0,
+    "overall": 4.75,
+    "notes": "Best avatar result across all tests. Vibrant cyan/blue/magenta laser backdrop. Navy crew-neck over plaid button-up with visible collar points — exactly per template spec. Round glasses, warm authentic smile. Kodak Gold film grain feel. Perfect face likeness preserved. No text overlay clutter. Most intentional period-accurate outfit."
+  },
+  "S2_edit": {
+    "prompt_adherence": 4.5,
+    "visual_quality": 4.5,
+    "aesthetics": 4.0,
+    "scenario_specific": 4.5,
+    "overall": 4.38,
+    "notes": "Clean denim jacket replacement with visible chest pockets and buttons. Background perfectly preserved. Change/Keep/Avoid pattern with blend instructions produces reliable results. Backpack straps rest naturally over jacket. Collar transition smooth. Tied with Skill 1 as best edit result."
+  },
+  "S3_poster": {
+    "prompt_adherence": 5.0,
+    "visual_quality": 5.0,
+    "aesthetics": 5.0,
+    "scenario_specific": 5.0,
+    "overall": 5.0,
+    "notes": "Perfect poster. Art Deco geometric border with gold on navy as specified. ALL text exactly correct: UC BERKELEY MUSIC SOCIETY header, SPRING AUDITIONS in dramatic 3D gold, Date: April 15th, Location: Sproul Hall Room 202, Time: 6-9 PM. Text-first approach with per-line specs delivered precise formatting. Time format matches exactly '6-9 PM' (other skills changed to '6:00 PM - 9:00 PM'). Musical instruments (violin, treble clef, trumpet) in gold silhouettes. Excellent visual hierarchy."
+  },
+  "S4_character": {
+    "prompt_adherence": 4.5,
+    "visual_quality": 4.0,
+    "aesthetics": 4.0,
+    "scenario_specific": 4.0,
+    "overall": 4.13,
+    "notes": "NOTE: Generated via MCP (gemini-2.5-flash) due to 3.1-flash rate limit on primary API. Full body Cyber-Knight with obsidian armor, purple veins, triangular chest core, cape, ruined city, CYBERNETICS neon sign, rain. Low angle hero stance. Energy veins less vivid than 3.1-flash versions — likely model difference. Armor design more matte/realistic. Good result but not fully comparable to other tests."
+  },
+  "phase": "custom",
+  "skill": "Custom (image-gen-skill)",
+  "method": "Scenario-classified templates: Avatar/Edit/Poster/Character with Gemini-specific optimization rules",
+  "average_overall": 4.57,
+  "note": "S4 used gemini-2.5-flash via MCP fallback due to API rate limiting on primary endpoint. S1/S2/S3 all used gemini-3.1-flash-image-preview."
+}

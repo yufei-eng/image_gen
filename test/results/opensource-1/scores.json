@@ -1,0 +1,38 @@
+{
+  "S1_avatar": {
+    "prompt_adherence": 4.5,
+    "visual_quality": 4.5,
+    "aesthetics": 4.5,
+    "scenario_specific": 4.5,
+    "overall": 4.5,
+    "notes": "Clean yearbook portrait with laser backdrop, plaid-under-sweater outfit authentic to 90s. No yearbook-page overlay clutter. Good face likeness preserved. Film grain texture adds authenticity."
+  },
+  "S2_edit": {
+    "prompt_adherence": 4.5,
+    "visual_quality": 4.5,
+    "aesthetics": 4.0,
+    "scenario_specific": 4.5,
+    "overall": 4.38,
+    "notes": "Dark indigo denim jacket with visible stitching and brass buttons as prompted. Background perfectly preserved. Natural fabric fold rendering. Clean collar transition. Slightly darker jacket than typical denim."
+  },
+  "S3_poster": {
+    "prompt_adherence": 5.0,
+    "visual_quality": 5.0,
+    "aesthetics": 5.0,
+    "scenario_specific": 5.0,
+    "overall": 5.0,
+    "notes": "Exceptional Art Deco style design. All text perfectly rendered: UC BERKELEY MUSIC SOCIETY, SPRING AUDITIONS, Date/Location/Time all correct. Gold/navy palette. Violin, treble clef, trumpet motifs. Clean hierarchy. Even added fictional website. Best poster across all tests."
+  },
+  "S4_character": {
+    "prompt_adherence": 5.0,
+    "visual_quality": 4.5,
+    "aesthetics": 4.5,
+    "scenario_specific": 5.0,
+    "overall": 4.75,
+    "notes": "Portrait orientation full-body. Obsidian armor with purple energy veins, flowing cape, narrow visor. Low angle hero stance in ruined NYC (NYPD car, neon signs NIGHT CITY/TECH). Very faithful to prompt. Rich environmental detail."
+  },
+  "phase": "opensource-1",
+  "skill": "harshkedia177/nano-banana-prompting",
+  "method": "Priority-ordered narrative prompts, explicit constraints, text-first hack",
+  "average_overall": 4.66
+}

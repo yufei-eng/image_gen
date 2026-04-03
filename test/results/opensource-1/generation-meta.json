@@ -1,0 +1,50 @@
+{
+  "S1_avatar": {
+    "scenario": "S1 Social - AI Avatar",
+    "skill": "harshkedia177/nano-banana-prompting",
+    "original_prompt": "Turn my selfie into a 90s high school yearbook photo",
+    "rewritten_prompt": "Transform this selfie photograph into a nostalgic 1990s American high school yearbook portrait. The subject should be posed in a classic yearbook head-and-shoulders composition against a traditional laser-beam gradient backdrop in blue and purple tones. Warm soft studio flash lighting typical of 90s school photography. The subject wears a casual 90s outfit like a crew-neck sweater. Aspect ratio 1:1, photorealistic style with slight film grain reminiscent of Kodak Gold 200. No modern elements, no text overlays.",
+    "reference_image": "/Users/yufei/Cursor/image-gen-skill/test/samples/selfie.jpg",
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/opensource-1/S1_avatar.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T12:18:13.393694"
+  },
+  "S2_edit": {
+    "scenario": "S2 Personal - Image Editing",
+    "skill": "harshkedia177/nano-banana-prompting",
+    "original_prompt": "I like this photo, but I would replace the upper-body with a denim jacket.",
+    "rewritten_prompt": "Edit this photograph: replace only the upper-body clothing with a classic indigo denim jacket with visible stitching and brass button details. Keep the subject's face, hair, expression, pose, lower body, and entire background completely unchanged. The denim jacket should fit naturally with realistic fabric folds and shadows that match the existing lighting direction. Ensure seamless blending at the collar and waistline transition areas. Do not change the input aspect ratio.",
+    "reference_image": "/Users/yufei/Cursor/image-gen-skill/test/samples/outfit.jpg",
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/opensource-1/S2_edit.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T12:18:30.757170"
+  },
+  "S3_poster": {
+    "scenario": "S3 Learning - Poster Design",
+    "skill": "harshkedia177/nano-banana-prompting",
+    "original_prompt": "Create a high-contrast graphic design poster for 'UC Berkeley Music Society Spring Auditions'. Text to include: 'Date: April 15th', 'Location: Sproul Hall Room 202', 'Time: 6-9 PM'.",
+    "rewritten_prompt": "Generate an image: A high-contrast graphic design event poster. Bold geometric layout with a dark navy and gold color palette. Musical instruments (violin, trumpet, music notes) as decorative elements in the mid-section. Text to render precisely: \"UC BERKELEY MUSIC SOCIETY\" in bold sans-serif at the top, \"SPRING AUDITIONS\" in large display typography as the focal headline, \"Date: April 15th\" on its own line, \"Location: Sproul Hall Room 202\" on its own line, \"Time: 6-9 PM\" on its own line. All text must be spelled exactly as specified. Clean alignment, high legibility, no decorative distortion on text. Aspect ratio 3:4, print-ready poster design.",
+    "reference_image": null,
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/opensource-1/S3_poster.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T12:18:49.632768"
+  },
+  "S4_character": {
+    "scenario": "S4 Character - Concept Art",
+    "skill": "harshkedia177/nano-banana-prompting",
+    "original_prompt": "Full body concept art of a new Marvel-style superhero. A futuristic 'Cyber-Knight' wearing sleek obsidian armor with glowing purple energy veins. The character is standing in a heroic pose amidst the ruins of a tech-noir New York City.",
+    "rewritten_prompt": "Full body concept art illustration of an original Marvel-inspired superhero called 'Cyber-Knight'. Subject: A tall, imposing figure in sleek obsidian-black powered armor with intricate glowing purple-violet energy veins running across the chest plate, gauntlets, and greaves. The helmet features a narrow glowing visor. Pose: Standing in a confident heroic wide stance, fists slightly clenched, cape flowing to the right. Setting: Ruined tech-noir New York City at dusk — crumbling skyscrapers with flickering neon signs, debris on the ground, overcast sky with purple-tinged clouds. Style: Digital concept art, highly detailed, cinematic lighting with strong rim light from behind creating a silhouette edge glow. Dramatic low-angle shot. Aspect ratio 3:4. No text, no watermark.",
+    "reference_image": null,
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/opensource-1/S4_character.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T12:19:16.281023"
+  }
+}

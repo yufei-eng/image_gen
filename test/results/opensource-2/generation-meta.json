@@ -1,0 +1,50 @@
+{
+  "S1_avatar": {
+    "scenario": "S1 Social - AI Avatar",
+    "skill": "ivangdavila/image-generation",
+    "original_prompt": "Turn my selfie into a 90s high school yearbook photo",
+    "rewritten_prompt": "Goal: Transform a personal selfie into a retro school portrait.\nSubject: The person from the uploaded photo, head-and-shoulders framing, classic yearbook composition.\nStyle: 1990s American high school yearbook photography, warm tungsten studio lighting, soft focus, traditional laser-pattern backdrop.\nKeep unchanged: The subject's facial features and identity must be preserved exactly.\nAvoid: Modern styling, harsh shadows, digital artifacts.",
+    "reference_image": "/Users/yufei/Cursor/image-gen-skill/test/samples/selfie.jpg",
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/opensource-2/S1_avatar.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T12:19:33.512364"
+  },
+  "S2_edit": {
+    "scenario": "S2 Personal - Image Editing",
+    "skill": "ivangdavila/image-generation",
+    "original_prompt": "I like this photo, but I would replace the upper-body with a denim jacket.",
+    "rewritten_prompt": "Edit request:\n- Change: Replace the upper-body garment with a medium-wash denim jacket, naturally fitted with visible button details and collar.\n- Keep: Person identity, face, expression, hair, lower body clothing, background scene, camera angle, lighting direction.\n- Avoid: Extra objects, text overlays, heavy color shift, changing aspect ratio.",
+    "reference_image": "/Users/yufei/Cursor/image-gen-skill/test/samples/outfit.jpg",
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/opensource-2/S2_edit.png",
+    "success": true,
+    "error": null,
+    "text_response": "I have replaced your original upper-body garment with a naturally fitted, medium-wash denim jacket, while ensuring that your face, expression, and the beautiful mountain background remain completely unchanged.",
+    "timestamp": "2026-04-03T12:19:54.125702"
+  },
+  "S3_poster": {
+    "scenario": "S3 Learning - Poster Design",
+    "skill": "ivangdavila/image-generation",
+    "original_prompt": "Create a high-contrast graphic design poster for 'UC Berkeley Music Society Spring Auditions'. Text to include: 'Date: April 15th', 'Location: Sproul Hall Room 202', 'Time: 6-9 PM'.",
+    "rewritten_prompt": "Goal: Create an event announcement poster for a university music club.\nSubject: High-contrast graphic design poster with musical motifs (instruments, music notes, sound waves).\nStyle: Bold modern graphic design, dark background with metallic gold accents, clean professional layout.\nExact text: \"UC BERKELEY MUSIC SOCIETY\" as header, \"SPRING AUDITIONS\" as main headline, \"Date: April 15th\" as info line, \"Location: Sproul Hall Room 202\" as info line, \"Time: 6-9 PM\" as info line.\nTypography: Bold geometric sans-serif, all caps for header and headline, high contrast for legibility.\nAvoid: Decorative text distortion, misspellings, cluttered layout.",
+    "reference_image": null,
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/opensource-2/S3_poster.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T12:20:13.380723"
+  },
+  "S4_character": {
+    "scenario": "S4 Character - Concept Art",
+    "skill": "ivangdavila/image-generation",
+    "original_prompt": "Full body concept art of a new Marvel-style superhero. A futuristic 'Cyber-Knight' wearing sleek obsidian armor with glowing purple energy veins. The character is standing in a heroic pose amidst the ruins of a tech-noir New York City.",
+    "rewritten_prompt": "Goal: Create original superhero concept art for a character portfolio.\nSubject: Full body view of 'Cyber-Knight' — a futuristic armored superhero, tall imposing build. Sleek obsidian-black armor with glowing purple energy veins tracing circuit-like patterns across chest, limbs, and helmet visor.\nStyle: Marvel-inspired digital concept art, cinematic dramatic lighting, highly detailed rendering.\nComposition: Full body standing pose, heroic wide stance, low camera angle, slight upward perspective for imposing effect.\nSetting: Ruined tech-noir New York City — collapsed buildings, neon signage, rain-slicked debris, dark moody sky with purple atmospheric glow.\nAvoid: Text in image, watermarks, cartoonish proportions.",
+    "reference_image": null,
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/opensource-2/S4_character.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T12:20:37.533278"
+  }
+}

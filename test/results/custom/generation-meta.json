@@ -1,0 +1,50 @@
+{
+  "S1_avatar": {
+    "scenario": "S1 Social - AI Avatar",
+    "skill": "Custom (image-gen-skill)",
+    "original_prompt": "Turn my selfie into a 90s high school yearbook photo",
+    "rewritten_prompt": "Transform this selfie into a 1990s American high school yearbook portrait. The subject: head-and-shoulders framing, centered classic yearbook composition, natural friendly smile. Background: traditional multi-colored laser-beam gradient backdrop in cyan, blue, and magenta — the iconic 90s school photo pattern. Outfit: navy crew-neck sweater layered over a plaid button-up collar shirt, period-accurate preppy style with visible collar points. Photography: soft diffused studio flash from two front umbrella lights, warm tungsten color cast, natural skin tones, slight film grain reminiscent of Kodak Gold 200 shot on a point-and-shoot camera. The image should feel like a slightly faded genuine yearbook photo scanned from a printed page. Preserve: The subject's facial features, bone structure, and identity exactly as they appear in the input selfie. Aspect ratio 1:1 square. No modern elements, no text overlays, no watermark.",
+    "reference_image": "/Users/yufei/Cursor/image-gen-skill/test/samples/selfie.jpg",
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/custom/S1_avatar.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T12:26:52.280113"
+  },
+  "S2_edit": {
+    "scenario": "S2 Personal - Image Editing",
+    "skill": "Custom (image-gen-skill)",
+    "original_prompt": "I like this photo, but I would replace the upper-body with a denim jacket.",
+    "rewritten_prompt": "Edit this photograph:\n- CHANGE: Replace only the upper-body garment with a classic mid-wash indigo selvedge denim jacket. The jacket has a folded collar, two chest flap pockets with brass snap buttons, contrast orange stitching along seams, and natural fabric creasing at the elbows and chest. It is buttoned up to the second-to-top button.\n- KEEP UNCHANGED: The subject's face, facial expression, hair and hairstyle, glasses, skin tone, body pose (leaning against wooden railing), hand positions, lower body (khaki trousers), backpack straps on shoulders, the entire background scene (alpine lake, mountains, green hillside, wooden dock, gravel path), original lighting direction (overcast daylight from above-left), original color grading and white balance, camera angle and focal length.\n- BLEND: Ensure seamless transition at the neckline where jacket collar meets skin/hair. Jacket shadows must match the existing soft overcast lighting — no harsh shadows that weren't in the original. Backpack straps should rest naturally over the denim jacket shoulders.\n- AVOID: Adding any new objects, text overlays, changing the background, altering facial features, shifting the color temperature, or cropping differently.\nDo not change the input aspect ratio.",
+    "reference_image": "/Users/yufei/Cursor/image-gen-skill/test/samples/outfit.jpg",
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/custom/S2_edit.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T12:27:26.393041"
+  },
+  "S3_poster": {
+    "scenario": "S3 Learning - Poster Design",
+    "skill": "Custom (image-gen-skill)",
+    "original_prompt": "Create a high-contrast graphic design poster for 'UC Berkeley Music Society Spring Auditions'. Text to include: 'Date: April 15th', 'Location: Sproul Hall Room 202', 'Time: 6-9 PM'.",
+    "rewritten_prompt": "Generate an image: A high-contrast Art Deco-inspired graphic design event poster.\nLayout: 3:4 portrait orientation. Color palette: deep navy (#1a1a3e) background with metallic gold (#c5a55a) accents and cream white (#f5f0e1) text.\nEXACT TEXT TO RENDER:\n- \"UC BERKELEY MUSIC SOCIETY\" — top of poster, bold geometric sans-serif, all caps, cream white, largest header size.\n- \"SPRING AUDITIONS\" — center of poster, dramatic oversized display typography, metallic gold with slight 3D emboss effect, the visual focal point.\n- \"Date: April 15th\" — lower third, clean sans-serif, gold on navy, medium size.\n- \"Location: Sproul Hall Room 202\" — below date line, same style, medium size.\n- \"Time: 6-9 PM\" — below location line, same style, medium size.\nAll text must be spelled exactly as written above. High contrast for legibility, absolutely no decorative distortion or warping on text characters.\nVisual elements: Art Deco geometric patterns framing the text. Gold silhouettes of musical instruments (violin, trumpet, treble clef, music notes) arranged symmetrically in the mid-section between the headline and event details.\nComposition: Eye flow top→center headline→instruments→details. Clean margins, balanced symmetry. Professional print-ready poster quality.",
+    "reference_image": null,
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/custom/S3_poster.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T12:27:43.680740"
+  },
+  "S4_character": {
+    "scenario": "S4 Character - Concept Art",
+    "skill": "Custom (image-gen-skill)",
+    "original_prompt": "Full body concept art of a new Marvel-style superhero. A futuristic 'Cyber-Knight' wearing sleek obsidian armor with glowing purple energy veins. The character is standing in a heroic pose amidst the ruins of a tech-noir New York City.",
+    "rewritten_prompt": "Highly detailed digital concept art painting of an original Marvel-inspired superhero called 'Cyber-Knight'.\nFIGURE: Tall, imposing muscular build, standing 6'4\". Wearing sleek obsidian-black powered armor with a matte finish and subtle metallic flake. The armor consists of interlocking plates with smooth aerodynamic contours.\nDETAILS: Glowing purple-violet energy veins trace circuit-board-like patterns across the chest plate, along the forearms and gauntlets, down the thigh guards and greaves. The veins pulse with a soft inner light that casts a faint purple ambient glow on nearby surfaces. A triangular energy core on the chest plate glows brighter than the veins.\nHELMET: Fully enclosed with a narrow horizontal visor slit that glows the same purple-violet. Angular, predatory silhouette with swept-back edges.\nPOSE: Heroic wide power stance, legs planted shoulder-width apart, fists slightly clenched at the sides, weight centered. Chin tilted slightly upward in defiance. Shot from a low angle looking upward for an imposing, larger-than-life effect.\nCAPE: A dark metallic-fiber cape, tattered at the lower edge from battle damage, caught mid-billow to the right by wind. The interior lining has faint purple energy traces.\nSETTING: The ruins of a tech-noir New York City at twilight. Shattered skyscrapers with exposed steel frames, flickering neon signs in the background (OSCORP, SHIELD, CYBERNETICS), rubble and cracked asphalt underfoot, puddles reflecting the purple glow. Light rain falling.\nATMOSPHERE: Dramatic backlighting from a break in storm clouds, creating a strong rim light silhouette along the armor edges. Deep indigo and purple color palette with orange-amber accent from distant fires. Cinematic depth of field with slightly blurred background.\nAspect ratio 3:4 portrait orientation. No text in the image, no watermark.",
+    "reference_image": null,
+    "output": null,
+    "success": false,
+    "error": "Client error '429 Too Many Requests' for url 'https://yunwu.ai/v1beta/models/gemini-3.1-flash-image-preview:generateContent'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+    "text_response": null,
+    "timestamp": "2026-04-03T12:27:57.353379"
+  }
+}

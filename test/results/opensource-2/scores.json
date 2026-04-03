@@ -1,0 +1,38 @@
+{
+  "S1_avatar": {
+    "prompt_adherence": 4.0,
+    "visual_quality": 4.5,
+    "aesthetics": 4.0,
+    "scenario_specific": 4.0,
+    "overall": 4.13,
+    "notes": "Good yearbook portrait with laser backdrop. Zip-up gray sweater, close-up framing. Slightly more serious expression than typical yearbook smile. Good face likeness but tighter crop reduces the yearbook-page feel."
+  },
+  "S2_edit": {
+    "prompt_adherence": 4.0,
+    "visual_quality": 4.0,
+    "aesthetics": 4.0,
+    "scenario_specific": 4.0,
+    "overall": 4.0,
+    "notes": "Medium-wash denim jacket replacement successful. Background preserved well. Functional edit but jacket appears slightly lighter and less detailed than Skill 1. Overall competent local edit."
+  },
+  "S3_poster": {
+    "prompt_adherence": 4.5,
+    "visual_quality": 4.5,
+    "aesthetics": 4.5,
+    "scenario_specific": 4.5,
+    "overall": 4.5,
+    "notes": "Bold gold/black design. All core text correct. Location text wraps to 2 lines (Room 202 on second line). Grand piano at bottom adds nice touch. Very dramatic typography. 9:16 vertical format rather than 3:4."
+  },
+  "S4_character": {
+    "prompt_adherence": 4.0,
+    "visual_quality": 4.5,
+    "aesthetics": 4.5,
+    "scenario_specific": 4.0,
+    "overall": 4.25,
+    "notes": "Good armor design with purple veins, energy sword and shield. Empire State building visible. Rainy atmosphere. However landscape orientation instead of portrait (didn't follow 3:4), low-angle effect not as dramatic as Skill 1/3."
+  },
+  "phase": "opensource-2",
+  "skill": "ivangdavila/image-generation",
+  "method": "Objective-First template (Goal → Subject → Style → Text → Keep), Edit pattern (Change/Keep/Avoid)",
+  "average_overall": 4.22
+}

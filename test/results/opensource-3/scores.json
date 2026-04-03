@@ -1,0 +1,38 @@
+{
+  "S1_avatar": {
+    "prompt_adherence": 4.5,
+    "visual_quality": 4.5,
+    "aesthetics": 4.5,
+    "scenario_specific": 4.5,
+    "overall": 4.5,
+    "notes": "Very authentic 90s yearbook feel. Crew-neck sweater, round glasses, natural film grain texture. Laser backdrop in correct blue/magenta. Warm smile. Good face likeness. Clean without yearbook-page clutter."
+  },
+  "S2_edit": {
+    "prompt_adherence": 4.0,
+    "visual_quality": 4.0,
+    "aesthetics": 4.0,
+    "scenario_specific": 4.0,
+    "overall": 4.0,
+    "notes": "Denim jacket replacement successful. Background preserved. Similar quality to baseline and other skills. Preservation constraints well followed but jacket detail not significantly improved."
+  },
+  "S3_poster": {
+    "prompt_adherence": 4.5,
+    "visual_quality": 5.0,
+    "aesthetics": 5.0,
+    "scenario_specific": 4.5,
+    "overall": 4.75,
+    "notes": "Beautiful gold/navy design with decorative typography. All text present and correct. Time rendered as '6:00 PM - 9:00 PM' instead of '6-9 PM' (minor deviation). Added 'Open to All Berkeley Students' line. Violin, trumpet, treble clef, gold border. Very polished."
+  },
+  "S4_character": {
+    "prompt_adherence": 4.0,
+    "visual_quality": 5.0,
+    "aesthetics": 5.0,
+    "scenario_specific": 4.5,
+    "overall": 4.63,
+    "notes": "Stunning portrait-orientation full body concept art. Dramatic cape spread, extremely prominent purple energy veins creating circuit-trace patterns. Energy sword. Low angle with rain. However neon signs say NEO TOKYO/RAMEN — setting feels more Tokyo than NYC. Highest visual quality across all S4 tests."
+  },
+  "phase": "opensource-3",
+  "skill": "kousen/nano-banana-prompting",
+  "method": "Natural language narrative briefing, camera/lighting language, material specifics, purpose context",
+  "average_overall": 4.47
+}

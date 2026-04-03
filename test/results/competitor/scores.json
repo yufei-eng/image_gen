@@ -1,0 +1,39 @@
+{
+  "_instructions": "TODO: 请在豆包网页端测试后填写以下评分（参考 reference/doubao-test-guide.md）",
+  "S1_avatar": {
+    "prompt_adherence": null,
+    "visual_quality": null,
+    "aesthetics": null,
+    "scenario_specific": null,
+    "overall": null,
+    "notes": "TODO: 填写豆包 S1 测试结果描述"
+  },
+  "S2_edit": {
+    "prompt_adherence": null,
+    "visual_quality": null,
+    "aesthetics": null,
+    "scenario_specific": null,
+    "overall": null,
+    "notes": "TODO: 填写豆包 S2 测试结果描述"
+  },
+  "S3_poster": {
+    "prompt_adherence": null,
+    "visual_quality": null,
+    "aesthetics": null,
+    "scenario_specific": null,
+    "overall": null,
+    "notes": "TODO: 填写豆包 S3 测试结果描述"
+  },
+  "S4_character": {
+    "prompt_adherence": null,
+    "visual_quality": null,
+    "aesthetics": null,
+    "scenario_specific": null,
+    "overall": null,
+    "notes": "TODO: 填写豆包 S4 测试结果描述"
+  },
+  "phase": "competitor",
+  "model": "豆包 (Doubao/Seedream)",
+  "method": "网页端手动测试",
+  "average_overall": null
+}

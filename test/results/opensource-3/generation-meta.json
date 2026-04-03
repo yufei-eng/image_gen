@@ -1,0 +1,50 @@
+{
+  "S1_avatar": {
+    "scenario": "S1 Social - AI Avatar",
+    "skill": "kousen/nano-banana-prompting",
+    "original_prompt": "Turn my selfie into a 90s high school yearbook photo",
+    "rewritten_prompt": "A photorealistic 1990s high school yearbook portrait of the person in this selfie, captured in a classic head-and-shoulders composition with a retro laser-beam backdrop in vibrant blue and magenta. The subject wears a simple crew-neck sweater, hair neatly styled in a period-appropriate way. Shot with soft diffused studio flash lighting typical of 90s school photography studios, with slight warm color cast and natural film grain reminiscent of Kodak Gold. The mood is wholesome and nostalgic. Square 1:1 aspect ratio, styled for a social media profile picture.",
+    "reference_image": "/Users/yufei/Cursor/image-gen-skill/test/samples/selfie.jpg",
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/opensource-3/S1_avatar.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T12:20:58.566578"
+  },
+  "S2_edit": {
+    "scenario": "S2 Personal - Image Editing",
+    "skill": "kousen/nano-banana-prompting",
+    "original_prompt": "I like this photo, but I would replace the upper-body with a denim jacket.",
+    "rewritten_prompt": "Keep everything in this photograph exactly the same — the person's face, hair, expression, pose, the entire background and lower body — but replace only the upper-body clothing with a classic mid-wash denim jacket. The jacket should have visible brass buttons, contrast stitching, and a folded collar, fitted naturally to the subject's body with realistic fabric creases. The lighting on the new jacket should match the existing directional light in the scene, with consistent shadow placement. Seamless transition at the neckline and waist.",
+    "reference_image": "/Users/yufei/Cursor/image-gen-skill/test/samples/outfit.jpg",
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/opensource-3/S2_edit.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T12:21:29.334885"
+  },
+  "S3_poster": {
+    "scenario": "S3 Learning - Poster Design",
+    "skill": "kousen/nano-banana-prompting",
+    "original_prompt": "Create a high-contrast graphic design poster for 'UC Berkeley Music Society Spring Auditions'. Text to include: 'Date: April 15th', 'Location: Sproul Hall Room 202', 'Time: 6-9 PM'.",
+    "rewritten_prompt": "A bold, high-contrast graphic design poster for a university music event, styled for print at 3:4 aspect ratio. Dark navy background with gold and white metallic accents. Musical motifs — stylized violin, trumpet, and scattered music notes — as mid-section decorative elements. The text \"UC BERKELEY MUSIC SOCIETY\" appears in bold sans-serif at the top, \"SPRING AUDITIONS\" in large dramatic display typography as the central headline, with event details below: \"Date: April 15th\", \"Location: Sproul Hall Room 202\", and \"Time: 6-9 PM\" in clean, clearly legible type. Professional poster design with strong visual hierarchy and clean alignment. Created for a university student organization.",
+    "reference_image": null,
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/opensource-3/S3_poster.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T12:21:50.109914"
+  },
+  "S4_character": {
+    "scenario": "S4 Character - Concept Art",
+    "skill": "kousen/nano-banana-prompting",
+    "original_prompt": "Full body concept art of a new Marvel-style superhero. A futuristic 'Cyber-Knight' wearing sleek obsidian armor with glowing purple energy veins. The character is standing in a heroic pose amidst the ruins of a tech-noir New York City.",
+    "rewritten_prompt": "A cinematic digital concept art painting of an original Marvel-inspired superhero called 'Cyber-Knight', shown in a dramatic full-body standing pose with legs planted wide in a heroic stance. The character wears sleek obsidian-black powered armor with intricate glowing purple energy veins running like circuit traces across the chest plate, gauntlets, and leg guards. The helmet has a narrow glowing violet visor slit. A dark metallic cape billows behind. The scene is set in the ruins of a tech-noir New York City at twilight — shattered skyscrapers with flickering neon advertisements, rubble-strewn streets reflecting purple-tinged ambient light, rain mist in the air. Shot from a low angle looking upward for an imposing heroic effect, with dramatic backlighting creating a strong rim light silhouette. Rich purple and deep indigo color palette. Highly detailed, 3:4 portrait aspect ratio.",
+    "reference_image": null,
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/opensource-3/S4_character.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T12:22:10.531625"
+  }
+}

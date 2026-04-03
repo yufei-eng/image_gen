@@ -1,0 +1,38 @@
+{
+  "S1_avatar": {
+    "prompt_adherence": 4.5,
+    "visual_quality": 4.0,
+    "aesthetics": 4.5,
+    "scenario_specific": 4.0,
+    "overall": 4.25,
+    "notes": "Excellent 90s yearbook conversion - laser background, authentic framing, 'DAVID K. LEE - Class of 98' text. Face likeness well maintained from selfie. Minor: name is fabricated (not derived from selfie), surrounding mini-photos are AI-generated filler."
+  },
+  "S2_edit": {
+    "prompt_adherence": 4.0,
+    "visual_quality": 4.0,
+    "aesthetics": 4.0,
+    "scenario_specific": 3.5,
+    "overall": 3.88,
+    "notes": "Denim jacket replacement successful - natural fit, background fully preserved. Minor: jacket style slightly generic, transition at neck/collar area could be smoother. Overall convincing local edit."
+  },
+  "S3_poster": {
+    "prompt_adherence": 5.0,
+    "visual_quality": 5.0,
+    "aesthetics": 4.5,
+    "scenario_specific": 5.0,
+    "overall": 4.88,
+    "notes": "All specified text rendered perfectly: UC Berkeley Music Society, Spring Auditions, Date April 15th, Location Sproul Hall Room 202, Time 6-9 PM. High-contrast gold/blue/black design. Professional layout with music motifs (notes, instruments). Even added a fictional URL and MUSIC SOCIETY logo. Exceptional result."
+  },
+  "S4_character": {
+    "prompt_adherence": 4.5,
+    "visual_quality": 4.5,
+    "aesthetics": 4.5,
+    "scenario_specific": 4.5,
+    "overall": 4.5,
+    "notes": "Obsidian armor with glowing purple energy veins - exactly as described. Heroic stance in tech-noir NYC ruins. Added creative details: energy sword, shield, cape, OSCORP/SHIELD/CYBERNETICS signage. Landscape orientation rather than portrait (concept art is usually portrait for full-body). Very rich detail."
+  },
+  "phase": "baseline",
+  "model": "Gemini 3.1 Flash Image (Nano Banana 2)",
+  "method": "Raw user prompts, no optimization",
+  "average_overall": 4.38
+}

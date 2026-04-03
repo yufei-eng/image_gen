@@ -1,0 +1,42 @@
+{
+  "S1_avatar": {
+    "scenario": "S1 Social - AI Avatar",
+    "prompt_used": "Turn my selfie into a 90s high school yearbook photo",
+    "reference_image": "/Users/yufei/Cursor/image-gen-skill/test/samples/selfie.jpg",
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/baseline/S1_avatar.png",
+    "success": true,
+    "error": null,
+    "text_response": "Here is your photo re-imagined as a 1990s high school yearbook portrait, featuring the classic blue laser backdrop, a slightly boxier fit on your sweater, and an authentic vintage matte finish.",
+    "timestamp": "2026-04-03T12:10:32.944553"
+  },
+  "S2_edit": {
+    "scenario": "S2 Personal - Image Editing",
+    "prompt_used": "I like this photo, but I would replace the upper-body with a denim jacket.",
+    "reference_image": "/Users/yufei/Cursor/image-gen-skill/test/samples/outfit.jpg",
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/baseline/S2_edit.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T12:10:53.455858"
+  },
+  "S3_poster": {
+    "scenario": "S3 Learning - Poster Design",
+    "prompt_used": "Create a high-contrast graphic design poster for 'UC Berkeley Music Society Spring Auditions'. Text to include: 'Date: April 15th', 'Location: Sproul Hall Room 202', 'Time: 6-9 PM'.",
+    "reference_image": null,
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/baseline/S3_poster.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T12:11:14.777102"
+  },
+  "S4_character": {
+    "scenario": "S4 Character - Concept Art",
+    "prompt_used": "Full body concept art of a new Marvel-style superhero. A futuristic 'Cyber-Knight' wearing sleek obsidian armor with glowing purple energy veins. The character is standing in a heroic pose amidst the ruins of a tech-noir New York City.",
+    "reference_image": null,
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/baseline/S4_character.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T12:11:34.080082"
+  }
+}
