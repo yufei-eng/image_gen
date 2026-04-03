@@ -12,6 +12,8 @@ Automatically rewrites user image requests into optimized prompts using a fused 
 | **Local Image Edit** | "Replace my jacket with denim" | Per-category preservation list + material specifics + transition blending |
 | **Poster / Typography** | "Create a concert poster with text..." | Text-first hack + per-line numbered specs + no-misspelling constraint |
 | **Character Design** | "Full body concept art of a superhero" | Material specificity + multi-source lighting + camera language + neon text in quotes |
+| **Product / Object** | "Product shot of sneakers on marble" | Object material + staging + commercial lighting setup |
+| **General Scene** *(fallback)* | "A sunset", "cute panda", "logo design"... | Universal 总-分-总 with subject/environment/style/mood sections |
 
 ## Results
 
@@ -70,10 +72,12 @@ cp SKILL.md ~/.cursor/skills/image-gen/SKILL.md
 │   └── results/
 │       ├── baseline/           # Gemini direct (no skill)
 │       ├── competitor/         # Doubao / Seedream
-│       ├── r2-skill-a/         # Image Cog method
-│       ├── r2-skill-b/         # YouMind method
-│       ├── r2-skill-c/         # Hunyuan CoT method
-│       └── custom-v2/          # Custom Skill v2 (best)
+│       ├── r2-skill-a/         # Round 2: Image Cog method
+│       ├── r2-skill-b/         # Round 2: YouMind method
+│       ├── r2-skill-c/         # Round 2: Hunyuan CoT method
+│       ├── custom-v2/          # Custom Skill v2 (best — current)
+│       ├── custom/             # [Archive] v1 custom skill (4.57)
+│       └── opensource-*/       # [Archive] Round 1 open-source skills
 └── reference/                  # Doubao prompt patterns, test guide
 ```
 

@@ -2,9 +2,9 @@
 name: image-gen
 description: >-
   Rewrites user image generation requests into optimized prompts for Gemini 3.1 Flash Image
-  (Nano Banana 2). Covers avatar/style transfer, local image editing, poster/typography design,
-  and character concept art. Use when the user asks to generate, create, edit, or design an
-  image, photo, poster, avatar, character, or illustration.
+  (Nano Banana 2). Covers any image generation task including avatar/style transfer, local
+  editing, poster/typography, character design, product photography, landscapes, illustrations,
+  food, and more. Use when the user asks to generate, create, edit, or design any image.
 ---
 
 # Image Generation Prompt Optimizer v2
@@ -37,8 +37,11 @@ image, pass the image via `image_url`.
 | "replace", "change", "edit", "remove", "add to photo" | **Local Edit** | edit |
 | "poster", "flyer", "banner", text to include, event info | **Poster / Typography** | poster |
 | "character", "concept art", "superhero", "design a figure" | **Character Design** | character |
+| "product shot", "e-commerce", "on white background", "mockup" | **Product / Object** | product |
+| Anything else: landscape, food, illustration, scene, logo, social media, etc. | **General Scene** | general |
 
-If ambiguous, ask the user one clarifying question.
+If the request has a reference image, also check if it's an **edit** (modify existing)
+or a **transfer** (apply a style). Default to the most specific template that fits.
 
 ## Core Rewrite Principles
 
@@ -178,6 +181,72 @@ No text, no watermark, no UI elements.
 **Key additions:** Material specificity for every armor piece, camera angle in degrees,
 neon sign text in quotes, cape physics, multi-source lighting breakdown, style anchor.
 
+## Template: Product / Object
+
+Structure for e-commerce, mockup, and still-life photography:
+
+```
+总: A [photography style] product shot of [object with material/finish description],
+[one-sentence scene summary].
+
+分-Object:
+The [product] has [shape, dimensions, material, color, finish — "matte white ceramic
+mug with a thin gold rim and embossed logo", "brushed aluminum laptop with space-gray
+anodized finish"]. Surface details: [texture, reflections, imperfections].
+
+分-Staging:
+Surface: [material — "Carrara marble slab", "reclaimed oak table", "seamless white
+cyclorama"]. Props: [complementary objects — "scattered coffee beans", "single green
+leaf", "soft linen napkin"]. Arrangement: [composition — "rule of thirds", "centered
+hero", "flat lay from above"].
+
+分-Lighting & Camera:
+Lighting: [setup — "softbox at 45° camera-left, fill card camera-right, subtle
+backlight rim separating product from background"]. Color temperature: [warm/cool].
+Camera: [lens, aperture — "100mm macro, f/4, shallow DOF with product tack-sharp"].
+[Aspect ratio — typically 1:1 for e-commerce, 4:5 for social].
+
+总-Anchor: The overall style is [≤15 word description — e.g., "clean commercial
+product photography with magazine-grade lighting and crisp detail"].
+Negative: Text, watermarks, distracting background elements, unrealistic shadows.
+```
+
+## Template: General Scene (Fallback)
+
+Use for landscapes, food, illustrations, animals, architecture, social media,
+logos, and any request not matching specialized templates above:
+
+```
+总: [Medium/style — "photorealistic image", "watercolor illustration",
+"3D rendered scene", "flat vector icon"] of [subject + one-sentence description].
+
+分-Subject:
+[Primary subject with physical details — shape, color, material, texture, expression,
+pose, clothing. 2-3 sentences. Be specific: "golden retriever puppy" not just "dog"].
+
+分-Environment & Composition:
+Setting: [location, time of day, season, weather].
+Composition: [framing — "centered", "rule of thirds", "wide establishing shot",
+"close-up macro"]. Foreground/midground/background layers if applicable.
+[Aspect ratio].
+
+分-Style & Mood:
+Style: [specific reference — "Studio Ghibli watercolor", "National Geographic
+wildlife photography", "Bauhaus geometric poster", "Instagram flat-lay aesthetic"].
+Mood: [emotional tone — "warm and cozy", "dramatic and moody", "playful and bright"].
+Lighting: [source, quality, color — "golden hour side-light", "overcast diffuse",
+"neon-lit night scene"].
+Color palette: [dominant + accent colors if important].
+
+总-Anchor: The overall style is [≤20 word aesthetic summary].
+Negative: [2-5 specific exclusions relevant to the style].
+```
+
+**When to use this fallback:** Any request that doesn't match the 5 specialized
+templates. Apply ALL Core Rewrite Principles. The key value-add is converting vague
+user requests ("draw me a sunset") into specific, detailed prompts with concrete
+style/lighting/composition guidance.
+
 ## Quality Self-Check
 
 After generation, verify:
@@ -188,6 +257,8 @@ After generation, verify:
 | Edit | Background pixel-identical? Only specified area modified? Natural transition? |
 | Poster | All text present, spelled correctly, readable? Design hierarchy clear? |
 | Character | Full body visible in correct aspect ratio? All described elements present? |
+| Product | Object material/finish accurate? Lighting clean? Background as specified? |
+| General | Subject matches description? Style consistent? No unwanted elements? |
 
 If a check fails, craft a surgical edit prompt targeting only the failing element.
 
