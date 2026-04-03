@@ -1,0 +1,23 @@
+{
+  "S1_avatar": {
+    "prompt_adherence": 5.0, "visual_quality": 5.0, "aesthetics": 5.0, "scenario_specific": 5.0, "overall": 5.0,
+    "notes": "Perfect 90s yearbook. Laser beams (cyan + hot magenta) radiating from behind head against deep blue. Navy sweater with red plaid flannel collar visible — authentic 90s prep. Face identity excellently preserved (glasses, hair, jaw, skin tone). Warm Kodak Gold amber tones with subtle film grain. Soft vignetting at corners. Square 1:1 format. No text, no modern artifacts. The 总-分-总 structure + explicit Kodak Gold film stock + 'radiating from behind subject's head' directed beams perfectly."
+  },
+  "S2_edit": {
+    "prompt_adherence": 5.0, "visual_quality": 4.5, "aesthetics": 4.5, "scenario_specific": 5.0, "overall": 4.75,
+    "notes": "Exceptional local edit. Medium-wash indigo denim trucker jacket with visible chest pockets, snap buttons, and contrast stitching — exactly as described. Background pixel-identical: alpine lake with still reflection, snow-capped peaks, forested hillside, autumn trees, wooden railing, gravel path, grass — all untouched. Backpack straps drape naturally over denim shoulders. Pose perfectly maintained (seated, looking left). The per-category Absolute Preservation list was the key differentiator. Minor face smoothing/refinement (skin appears slightly more polished than original)."
+  },
+  "S3_poster": {
+    "prompt_adherence": 5.0, "visual_quality": 5.0, "aesthetics": 5.0, "scenario_specific": 5.0, "overall": 5.0,
+    "notes": "Perfect poster. All 5 text lines rendered with zero errors: 'UC BERKELEY MUSIC SOCIETY' in antique white, 'SPRING AUDITIONS' in metallic gold 3D embossed, 'Date: April 15th', 'Location: Sproul Hall Room 202', 'Time: 6-9 PM'. Art Deco geometric border with fan motifs at all corners. Gold silhouette violin (left), treble clef (center), trumpet (right) with music staff lines and scattered notes. Navy + gold + cream palette. Strict vertical symmetry, clear hierarchy. The Line 1-5 numbered text spec + 'no misspellings, no text warping' constraint + text-first approach ensured perfect rendering."
+  },
+  "S4_character": {
+    "prompt_adherence": 5.0, "visual_quality": 4.5, "aesthetics": 5.0, "scenario_specific": 5.0, "overall": 4.88,
+    "notes": "Generated via MCP (gemini-2.5-flash) due to API rate limit. Outstanding Cyber-Knight concept art. Full body, heroic wide stance on rubble. Obsidian armor with purple circuit-board veins, bright triangular chest core. Angular helmet with swept-back horns and purple visor. Cape billowing right with purple capillaries inside visible. Best neon text accuracy across ALL tests — 'OSCORP' clearly legible on left, 'CYBERNETICS' on right. Orange fire glow left, purple radiosity, rain, puddles reflecting purple. The style anchoring sentence ('deep indigo, black, and purple palette, in the tradition of Marvel concept artists') unified the color mood perfectly."
+  },
+  "phase": "custom-v2",
+  "skill": "Custom Skill v2 — 总-分-总 Fused Methodology",
+  "method": "总-分-总 (General-Detail-General) structure fusing Image Cog labels, YouMind structured sections, Hunyuan CoT flow, Doubao S2 preservation, text-first hack, style anchoring, negative constraints",
+  "average_overall": 4.91,
+  "note": "S4 used gemini-2.5-flash via MCP fallback. S1/S2/S3 used gemini-3.1-flash-image-preview."
+}

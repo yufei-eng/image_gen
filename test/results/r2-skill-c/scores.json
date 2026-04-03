@@ -1,0 +1,39 @@
+{
+  "S1_avatar": {
+    "prompt_adherence": 5.0,
+    "visual_quality": 4.5,
+    "aesthetics": 4.5,
+    "scenario_specific": 4.5,
+    "overall": 4.63,
+    "notes": "Good 90s yearbook. Laser beam backdrop with geometric/angular lines (straight intersecting rays rather than curved radiating beams). Navy sweater with plaid collar, glasses, natural smile. Face identity preserved. Warm tones with subtle grain. Square format. The CoT 总-分-总 structure produced a clean prompt. The laser pattern is less 'classic yearbook' (which typically has curved beams) and more modern/geometric — minor aesthetic difference."
+  },
+  "S2_edit": {
+    "prompt_adherence": 5.0,
+    "visual_quality": 4.5,
+    "aesthetics": 4.5,
+    "scenario_specific": 4.5,
+    "overall": 4.63,
+    "notes": "Clean denim jacket replacement with visible brass buttons and contrast stitching. Backpack straps clearly visible on jacket shoulders — better strap rendering than other skills. Background perfectly preserved. Pose maintained. The CoT structure's 'primary change → secondary preservation → style summary' ordering produced reliable results. Collar transition smooth."
+  },
+  "S3_poster": {
+    "prompt_adherence": 5.0,
+    "visual_quality": 5.0,
+    "aesthetics": 5.0,
+    "scenario_specific": 5.0,
+    "overall": 5.0,
+    "notes": "Perfect Art Deco poster. All text correct. Fan motif corners, gold geometric border. Violin, treble clef, trumpet with scattered music notes. Navy + gold + cream palette. Clean hierarchy: title → headline → instruments → details. The style summary sentence at the end ('professional, print-ready Art Deco') effectively anchored the overall aesthetic."
+  },
+  "S4_character": {
+    "prompt_adherence": 4.5,
+    "visual_quality": 4.5,
+    "aesthetics": 5.0,
+    "scenario_specific": 4.5,
+    "overall": 4.63,
+    "notes": "Generated via MCP (gemini-2.5-flash). Full body Cyber-Knight. The most visually striking S4 across all three skills — angular helmet with swept-back horns adds a distinctive design flair. Obsidian armor with purple veins, triangular chest core. Cape flowing right. OSCORP and CYBERNETICS neon signs clearly legible (best neon text accuracy). Fire on left, rain, dramatic storm clouds. The style summary sentence ('deep indigo and purple palette') anchored the color mood effectively."
+  },
+  "phase": "r2-skill-c",
+  "skill": "Hunyuan CoT 总-分-总 (General-Detail-General)",
+  "method": "Chain-of-Thought 总-分-总 structure: overview → primary-to-secondary details → one-sentence style summary for anchoring",
+  "average_overall": 4.72,
+  "note": "S4 used gemini-2.5-flash via MCP fallback due to API rate limiting. S1/S2/S3 used gemini-3.1-flash-image-preview."
+}

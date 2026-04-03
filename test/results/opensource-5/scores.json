@@ -1,0 +1,39 @@
+{
+  "S1_avatar": {
+    "prompt_adherence": 5.0,
+    "visual_quality": 4.5,
+    "aesthetics": 5.0,
+    "scenario_specific": 5.0,
+    "overall": 4.88,
+    "notes": "Excellent 90s yearbook. Laser beam backdrop radiates from center — more dramatic/artistic composition than Skill 4. Navy sweater + plaid collar, glasses, natural warm smile all correct. Warm Kodak tones and visible film grain. Face identity well preserved. The CoT '总-分-总' structure produced a clean, layered prompt that the model followed faithfully. The 'Style summary' sentence at the end ('authentic 1990s school photography with nostalgic, wholesome warmth') provided strong style anchoring."
+  },
+  "S2_edit": {
+    "prompt_adherence": 4.5,
+    "visual_quality": 4.0,
+    "aesthetics": 4.0,
+    "scenario_specific": 4.0,
+    "overall": 4.13,
+    "notes": "Denim jacket replacement achieved. Background well preserved — lake, mountains, sky all intact. Pose is closer to original than Skill 4 (subject still leaning). However, the jacket has less visible detail (pockets/buttons less prominent) and the face shows slightly more smoothing/alteration than the original. The CoT approach's more concise edit instructions ('pixel-identical' preservation) were slightly less effective than Skill 4's exhaustive CHANGE/KEEP/BLEND structure for guiding precise edits."
+  },
+  "S3_poster": {
+    "prompt_adherence": 5.0,
+    "visual_quality": 5.0,
+    "aesthetics": 5.0,
+    "scenario_specific": 5.0,
+    "overall": 5.0,
+    "notes": "Near-perfect poster, virtually identical quality to Skill 4. All text correct: 'UC BERKELEY MUSIC SOCIETY', 'SPRING AUDITIONS' in 3D gold, 'Date: April 15th', 'Location: Sproul Hall Room 202', 'Time: 6-9 PM'. Art Deco border with stepped corners. Navy + gold palette. Gold silhouette instruments (violin, treble clef, trumpet). The CoT approach of describing elements from primary to secondary (headline → instruments → details) created clear visual hierarchy. The style summary sentence reinforced the Art Deco aesthetic."
+  },
+  "S4_character": {
+    "prompt_adherence": 4.5,
+    "visual_quality": 4.5,
+    "aesthetics": 4.5,
+    "scenario_specific": 4.5,
+    "overall": 4.5,
+    "notes": "Generated via MCP (gemini-2.5-flash) due to API rate limit. Full body Cyber-Knight, wide heroic stance, low angle. Obsidian armor with bright purple veins, triangular chest core. Smooth helmet with purple visor. Cape tattered and billowing right. OSCORP neon sign on left, CYBERNETICS on right — both more legible than Skill 4's S4. Ruined city with rain, fires, puddle reflections. The CoT '总-分-总' structure placed the style summary at the end ('cinematic digital concept art with deep indigo and purple palette'), which effectively anchored the overall aesthetic."
+  },
+  "phase": "opensource-5",
+  "skill": "Hunyuan-PromptEnhancer/PromptEnhancer (3.7k stars) — CoT method",
+  "method": "Chain-of-Thought '总-分-总' (General-Detail-General) rewriting: overview sentence → primary-to-secondary details → one-sentence style summary",
+  "average_overall": 4.63,
+  "note": "S4 used gemini-2.5-flash via MCP fallback due to API rate limiting. S1/S2/S3 used gemini-3.1-flash-image-preview."
+}

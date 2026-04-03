@@ -1,0 +1,39 @@
+{
+  "S1_avatar": {
+    "prompt_adherence": 5.0,
+    "visual_quality": 5.0,
+    "aesthetics": 4.5,
+    "scenario_specific": 5.0,
+    "overall": 4.88,
+    "notes": "Excellent 90s yearbook conversion. Laser beam backdrop with cyan/green/purple lines is very authentic to the era — more geometric/linear than Skill 5's radial version. Navy crew-neck sweater with plaid collar peeking out exactly as specified. Warm Kodak Gold tones with visible film grain. Face identity well preserved from selfie — glasses, hair, facial structure all correct. No text overlays. The extremely detailed prompt specs (dual-umbrella flash, Kodak Gold 200, warm color shift) all translated well."
+  },
+  "S2_edit": {
+    "prompt_adherence": 4.5,
+    "visual_quality": 4.5,
+    "aesthetics": 4.5,
+    "scenario_specific": 4.5,
+    "overall": 4.5,
+    "notes": "Clean denim trucker jacket replacement with visible chest flap pockets, brass buttons, and natural denim texture. Background perfectly preserved — alpine lake, mountains, green hillside, wooden railing, gravel path all intact. Backpack straps sit naturally on jacket shoulders. Subject's pose is slightly more upright than original (was leaning against bench), minor pose drift. The 'surgical precision' CHANGE/KEEP/BLEND structure produced very reliable results. Collar-to-neck transition is smooth."
+  },
+  "S3_poster": {
+    "prompt_adherence": 5.0,
+    "visual_quality": 5.0,
+    "aesthetics": 5.0,
+    "scenario_specific": 5.0,
+    "overall": 5.0,
+    "notes": "Near-perfect poster. Art Deco geometric border with stepped corners and fan motifs. Navy (#0d1b2a) background with burnished gold accents. ALL text exactly correct: 'UC BERKELEY MUSIC SOCIETY' at top in white, 'SPRING AUDITIONS' center in dramatic 3D metallic gold, 'Date: April 15th', 'Location: Sproul Hall Room 202', 'Time: 6-9 PM'. Gold silhouette instruments — violin (left), treble clef (center), trumpet (right) with scattered music notes. Clear visual hierarchy. Print-ready quality. The extremely detailed color palette specs (hex-adjacent descriptions) guided the model perfectly."
+  },
+  "S4_character": {
+    "prompt_adherence": 4.0,
+    "visual_quality": 4.0,
+    "aesthetics": 4.5,
+    "scenario_specific": 4.0,
+    "overall": 4.13,
+    "notes": "Generated via MCP (gemini-2.5-flash) due to API rate limit. Full body Cyber-Knight in heroic wide stance, low angle. Obsidian armor with purple energy veins, triangular chest core, swept-back helmet with purple visor. Cape billowing right. OSCORP neon sign correct on left, but right sign reads 'STERTICS' (should be CYBERNETICS) — text rendering partial error. Ruined city with fires and rain. Dramatic composition. Good but neon text accuracy suffers vs Skill 5's S4."
+  },
+  "phase": "opensource-4",
+  "skill": "YouMind-OpenLab/awesome-nano-banana-pro-prompts (10.5k stars)",
+  "method": "Ultra-detailed narrative prompts mimicking the community's 12,000+ curated prompt library patterns — exact camera settings, film stock, material textures, spatial layout",
+  "average_overall": 4.63,
+  "note": "S4 used gemini-2.5-flash via MCP fallback due to API rate limiting. S1/S2/S3 used gemini-3.1-flash-image-preview."
+}

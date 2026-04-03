@@ -1,0 +1,39 @@
+{
+  "S1_avatar": {
+    "prompt_adherence": 4.5,
+    "visual_quality": 4.5,
+    "aesthetics": 5.0,
+    "scenario_specific": 5.0,
+    "overall": 4.75,
+    "notes": "Excellent 90s yearbook. Multi-color laser beams (cyan, blue, magenta, pink) radiating from center — beautiful, dramatic composition. Navy sweater with plaid collar, glasses, natural warm smile. Face identity well preserved. Warm Kodak tones with visible grain. However portrait orientation rather than 1:1 square as specified in prompt — minor format deviation. The structured ### sections (Scene/Subject/Environment/Lighting/Camera) provided excellent detail control."
+  },
+  "S2_edit": {
+    "prompt_adherence": 4.5,
+    "visual_quality": 4.5,
+    "aesthetics": 4.5,
+    "scenario_specific": 4.5,
+    "overall": 4.5,
+    "notes": "Clean denim trucker jacket replacement. Background perfectly preserved — lake, mountains, sky all intact. Pose maintained, khaki chinos unchanged. Jacket has natural denim texture with visible stitching. The structured ### Target Change and ### Absolute Preservation sections worked effectively. Face slightly smoothed compared to original. Very similar quality to Skill A's S2."
+  },
+  "S3_poster": {
+    "prompt_adherence": 5.0,
+    "visual_quality": 5.0,
+    "aesthetics": 5.0,
+    "scenario_specific": 5.0,
+    "overall": 5.0,
+    "notes": "Perfect Art Deco poster with the most elaborate border design of all three skills. Fan motifs at all 4 corners plus bottom center diamond. All text correct. Gold silhouette violin, treble clef, trumpet with music staff lines at bottom. Navy + gold palette. The hex-code-adjacent color descriptions and Line 1-5 numbered text structure produced the most decoratively rich result."
+  },
+  "S4_character": {
+    "prompt_adherence": 4.5,
+    "visual_quality": 4.5,
+    "aesthetics": 4.5,
+    "scenario_specific": 4.5,
+    "overall": 4.5,
+    "notes": "Generated via MCP (gemini-2.5-flash). Full body Cyber-Knight, heroic stance. Obsidian armor with purple veins (more lightning-like organic pattern), triangular chest core. Cape with purple energy capillaries visible inside — unique detail from the detailed ### Character section. OSCORP neon partially visible, CYBERNETICS neon clear. Fire glow from left. Rain and puddles."
+  },
+  "phase": "r2-skill-b",
+  "skill": "YouMind Community Patterns (12K+ curated prompts)",
+  "method": "Ultra-detailed structured prompts with ### sections (Scene/Subject/Environment/Lighting/Camera/Negative), exact camera parameters",
+  "average_overall": 4.69,
+  "note": "S4 used gemini-2.5-flash via MCP fallback due to API rate limiting. S1/S2/S3 used gemini-3.1-flash-image-preview."
+}

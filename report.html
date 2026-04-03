@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Generation Skill 评测报告</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Noto+Sans+SC:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-deep: #06090e;
+  --bg-card: #0d1420;
+  --bg-glass: rgba(13,20,32,0.85);
+  --accent-gold: #c9a14a;
+  --accent-purple: #8b5cf6;
+  --accent-cyan: #22d3ee;
+  --accent-rose: #f43f5e;
+  --accent-emerald: #10b981;
+  --text-primary: #e8edf5;
+  --text-muted: #8896aa;
+  --border-subtle: rgba(136,150,170,0.15);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans SC', sans-serif;
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+.slide {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(20px, 4vh, 50px) clamp(20px, 5vw, 80px);
+  position: relative;
+}
+.slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(139,92,246,0.08), transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(34,211,238,0.05), transparent 50%);
+  pointer-events: none;
+}
+
+/* ── Title Slide ── */
+.title-slide { text-align: center; }
+.title-slide h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--accent-gold) 0%, #f0d68a 40%, var(--accent-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.3em;
+}
+.title-slide .subtitle {
+  font-size: clamp(1rem, 2.2vw, 1.5rem);
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-bottom: 1.5em;
+}
+.title-slide .meta {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+  color: var(--text-muted);
+}
+.title-slide .meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+/* ── Score Chart Slide ── */
+.chart-slide .slide-content { width: 100%; max-width: 1100px; position: relative; z-index: 1; }
+.chart-slide h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--accent-gold);
+  margin-bottom: clamp(10px, 2vh, 25px);
+  text-align: center;
+}
+.score-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: clamp(8px, 1.5vh, 18px);
+  font-size: clamp(0.7rem, 1.1vw, 0.88rem);
+}
+.score-table th, .score-table td {
+  padding: clamp(4px, 0.8vh, 10px) clamp(6px, 1vw, 14px);
+  text-align: center;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.score-table th {
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8em;
+}
+.score-table .method-col { text-align: left; font-weight: 600; }
+.score-table .best { color: var(--accent-gold); font-weight: 700; }
+.score-table .highlight-row { background: rgba(201,161,74,0.08); }
+.bar-container { display: flex; align-items: center; gap: 8px; }
+.bar {
+  height: 18px;
+  border-radius: 9px;
+  transition: width 1s ease-out;
+}
+.bar-baseline { background: linear-gradient(90deg, #64748b, #94a3b8); }
+.bar-doubao { background: linear-gradient(90deg, var(--accent-rose), #fb7185); }
+.bar-skill { background: linear-gradient(90deg, var(--accent-cyan), #67e8f9); }
+.bar-custom { background: linear-gradient(90deg, var(--accent-gold), #f0d68a); }
+.bar-label { font-family: 'JetBrains Mono', monospace; font-size: 0.85em; font-weight: 600; min-width: 35px; }
+.score-insight {
+  background: var(--bg-card);
+  border-left: 3px solid var(--accent-gold);
+  padding: clamp(8px, 1.5vh, 16px) clamp(12px, 2vw, 20px);
+  border-radius: 0 8px 8px 0;
+  font-size: clamp(0.75rem, 1.1vw, 0.9rem);
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.score-insight strong { color: var(--text-primary); }
+
+/* ── Scenario Slides ── */
+.scenario-slide .slide-content {
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+.scenario-slide h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  color: var(--accent-gold);
+  margin-bottom: clamp(6px, 1vh, 14px);
+  text-align: center;
+}
+.scenario-desc {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: clamp(0.7rem, 1vw, 0.85rem);
+  margin-bottom: clamp(8px, 1.5vh, 16px);
+  font-style: italic;
+}
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(6px, 1vw, 14px);
+  margin-bottom: clamp(8px, 1.5vh, 16px);
+}
+.compare-cell { text-align: center; }
+.compare-cell .label {
+  font-size: clamp(0.6rem, 0.9vw, 0.78rem);
+  font-weight: 600;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.label-baseline { color: #94a3b8; }
+.label-doubao { color: var(--accent-rose); }
+.label-skill { color: var(--accent-cyan); }
+.label-custom { color: var(--accent-gold); }
+.compare-cell .score-badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(0.6rem, 0.8vw, 0.72rem);
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+.badge-baseline { background: rgba(148,163,184,0.15); color: #94a3b8; }
+.badge-doubao { background: rgba(244,63,94,0.12); color: var(--accent-rose); }
+.badge-skill { background: rgba(34,211,238,0.12); color: var(--accent-cyan); }
+.badge-custom { background: rgba(201,161,74,0.12); color: var(--accent-gold); }
+.img-wrap {
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(6,10,22,0.8), rgba(14,20,41,0.6));
+  aspect-ratio: auto;
+}
+.img-wrap img {
+  width: 100%;
+  height: clamp(100px, 42vh, 420px);
+  object-fit: contain;
+  display: block;
+}
+.scenario-analysis {
+  background: var(--bg-card);
+  border-left: 3px solid var(--accent-purple);
+  padding: clamp(6px, 1vh, 14px) clamp(10px, 1.5vw, 18px);
+  border-radius: 0 8px 8px 0;
+  font-size: clamp(0.68rem, 1vw, 0.85rem);
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+.scenario-analysis strong { color: var(--text-primary); }
+.scenario-analysis .winner { color: var(--accent-gold); font-weight: 700; }
+
+/* ── Method Slide ── */
+.method-slide .slide-content { max-width: 1000px; position: relative; z-index: 1; }
+.method-slide h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 2.8vw, 2rem);
+  color: var(--accent-gold);
+  margin-bottom: clamp(12px, 2vh, 25px);
+  text-align: center;
+}
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(10px, 1.5vw, 20px);
+}
+.method-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: clamp(10px, 2vh, 22px) clamp(12px, 2vw, 20px);
+}
+.method-card h3 {
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  color: var(--accent-cyan);
+  margin-bottom: 6px;
+}
+.method-card p {
+  font-size: clamp(0.7rem, 1vw, 0.85rem);
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── Conclusion ── */
+.conclusion-slide .slide-content { max-width: 900px; text-align: center; position: relative; z-index: 1; }
+.conclusion-slide h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--accent-gold);
+  margin-bottom: clamp(15px, 3vh, 35px);
+}
+.conclusion-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(10px, 2vw, 24px);
+  text-align: left;
+}
+.conclusion-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: clamp(12px, 2vh, 24px);
+}
+.conclusion-card .big-num {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 900;
+  color: var(--accent-gold);
+  display: block;
+  margin-bottom: 4px;
+}
+.conclusion-card h3 {
+  font-size: clamp(0.8rem, 1.1vw, 0.95rem);
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+.conclusion-card p {
+  font-size: clamp(0.7rem, 1vw, 0.82rem);
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* ── Navigation ── */
+.nav-dots {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 100;
+}
+.nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+}
+.nav-dot.active {
+  background: var(--accent-gold);
+  box-shadow: 0 0 8px rgba(201,161,74,0.5);
+  transform: scale(1.3);
+}
+
+/* ── Animations ── */
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { opacity: 0; animation: fadeInUp 0.6s ease-out forwards; }
+.reveal-d1 { animation-delay: 0.1s; }
+.reveal-d2 { animation-delay: 0.2s; }
+.reveal-d3 { animation-delay: 0.3s; }
+.reveal-d4 { animation-delay: 0.4s; }
+
+@media (max-height: 750px) {
+  .img-wrap img { height: clamp(80px, 35vh, 300px); }
+}
+@media (max-height: 600px) {
+  .img-wrap img { height: clamp(60px, 28vh, 220px); }
+}
+@media (max-width: 768px) {
+  .compare-grid { grid-template-columns: repeat(2, 1fr); }
+  .method-grid { grid-template-columns: 1fr; }
+  .conclusion-cards { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ SLIDE 1: TITLE ═══════════ -->
+<section class="slide title-slide" id="s0">
+  <div class="slide-content">
+    <h1 class="reveal">Image Generation Skill</h1>
+    <h1 class="reveal reveal-d1" style="font-size: clamp(1.5rem,3.5vw,2.8rem); margin-top:-0.3em;">评测报告</h1>
+    <p class="subtitle reveal reveal-d2">Gemini 3.1 Flash Image × Prompt Engineering Optimization</p>
+    <div class="meta reveal reveal-d3">
+      <span>4 场景</span>
+      <span>4 方案对比</span>
+      <span>16 张典型生成</span>
+      <span>2026.04.03</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SLIDE 2: EXECUTIVE SUMMARY ═══════════ -->
+<section class="slide chart-slide" id="s1">
+  <div class="slide-content">
+    <h2 class="reveal">综合评分对比</h2>
+    <table class="score-table reveal reveal-d1">
+      <thead>
+        <tr>
+          <th class="method-col" style="text-align:left">方案</th>
+          <th>S1 头像</th>
+          <th>S2 编辑</th>
+          <th>S3 海报</th>
+          <th>S4 角色</th>
+          <th>均分</th>
+          <th style="width:22%">可视化</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="method-col">模型直调 (Baseline)</td>
+          <td>4.25</td><td>3.88</td><td>4.88</td><td>4.50</td>
+          <td><strong>4.38</strong></td>
+          <td><div class="bar-container"><div class="bar bar-baseline" style="width:87.6%"></div><span class="bar-label">4.38</span></div></td>
+        </tr>
+        <tr>
+          <td class="method-col">豆包 (Doubao)</td>
+          <td>3.88</td><td class="best">4.75</td><td>3.75</td><td>4.25</td>
+          <td><strong>4.16</strong></td>
+          <td><div class="bar-container"><div class="bar bar-doubao" style="width:83.2%"></div><span class="bar-label">4.16</span></div></td>
+        </tr>
+        <tr>
+          <td class="method-col">最佳新 Skill (Hunyuan CoT)</td>
+          <td>4.63</td><td>4.63</td><td>5.00</td><td>4.63</td>
+          <td><strong>4.72</strong></td>
+          <td><div class="bar-container"><div class="bar bar-skill" style="width:94.4%"></div><span class="bar-label">4.72</span></div></td>
+        </tr>
+        <tr class="highlight-row">
+          <td class="method-col" style="color:var(--accent-gold)">Custom Skill v2</td>
+          <td class="best">5.00</td><td class="best">4.75</td><td class="best">5.00</td><td class="best">4.88</td>
+          <td class="best"><strong>4.91</strong></td>
+          <td><div class="bar-container"><div class="bar bar-custom" style="width:98.2%"></div><span class="bar-label best">4.91</span></div></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="score-insight reveal reveal-d2">
+      <strong>Custom Skill v2 以 4.91 均分领先</strong>，相比模型直调提升 <strong>+12%</strong>，相比豆包提升 <strong>+18%</strong>，相比最佳开源 Skill 提升 <strong>+4%</strong>。优势来自总-分-总结构、text-first hack、逐类别保存清单和风格锚定句的融合。
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SLIDE 3: S1 AVATAR ═══════════ -->
+<section class="slide scenario-slide" id="s2">
+  <div class="slide-content">
+    <h2 class="reveal">S1 社交场景：90s 年鉴头像</h2>
+    <p class="scenario-desc reveal reveal-d1">用户输入："Turn my selfie into a 90s high school yearbook photo" + 自拍照</p>
+    <div class="compare-grid reveal reveal-d2">
+      <div class="compare-cell">
+        <div class="label label-baseline">模型直调</div>
+        <span class="score-badge badge-baseline">4.25</span>
+        <div class="img-wrap"><img src="test/results/baseline/S1_avatar.png" alt="Baseline S1"></div>
+      </div>
+      <div class="compare-cell">
+        <div class="label label-doubao">豆包</div>
+        <span class="score-badge badge-doubao">3.88</span>
+        <div class="img-wrap"><img src="test/results/competitor/S1_sm.png" alt="Doubao S1"></div>
+      </div>
+      <div class="compare-cell">
+        <div class="label label-skill">Hunyuan CoT</div>
+        <span class="score-badge badge-skill">4.63</span>
+        <div class="img-wrap"><img src="test/results/r2-skill-c/S1_avatar.png" alt="Skill C S1"></div>
+      </div>
+      <div class="compare-cell">
+        <div class="label label-custom">Custom v2</div>
+        <span class="score-badge badge-custom">5.00</span>
+        <div class="img-wrap"><img src="test/results/custom-v2/S1_avatar.png" alt="Custom v2 S1"></div>
+      </div>
+    </div>
+    <div class="scenario-analysis reveal reveal-d3">
+      <strong>关键差异：</strong>豆包将"90s yearbook"解读为"学校教室场景"，缺少标志性的激光束背景。模型直调虽有激光背景但添加了多余的年鉴页面拼图。新 Skill 和 <span class="winner">Custom v2</span> 通过精确描述"cyan and magenta rays radiating against deep cobalt blue"成功重现经典激光束效果。Custom v2 额外的"Kodak Gold 200"胶片指令带来最真实的暖色调和颗粒感，且红色格纹衬衫领最贴合 90s prep 风格。
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SLIDE 4: S2 EDIT ═══════════ -->
+<section class="slide scenario-slide" id="s3">
+  <div class="slide-content">
+    <h2 class="reveal">S2 个人生活：局部图片编辑</h2>
+    <p class="scenario-desc reveal reveal-d1">用户输入："Replace the upper-body with a denim jacket" + 户外照片</p>
+    <div class="compare-grid reveal reveal-d2">
+      <div class="compare-cell">
+        <div class="label label-baseline">模型直调</div>
+        <span class="score-badge badge-baseline">3.88</span>
+        <div class="img-wrap"><img src="test/results/baseline/S2_edit.png" alt="Baseline S2"></div>
+      </div>
+      <div class="compare-cell">
+        <div class="label label-doubao">豆包</div>
+        <span class="score-badge badge-doubao">4.75</span>
+        <div class="img-wrap"><img src="test/results/competitor/S2_sm.png" alt="Doubao S2"></div>
+      </div>
+      <div class="compare-cell">
+        <div class="label label-skill">Hunyuan CoT</div>
+        <span class="score-badge badge-skill">4.63</span>
+        <div class="img-wrap"><img src="test/results/r2-skill-c/S2_edit.png" alt="Skill C S2"></div>
+      </div>
+      <div class="compare-cell">
+        <div class="label label-custom">Custom v2</div>
+        <span class="score-badge badge-custom">4.75</span>
+        <div class="img-wrap"><img src="test/results/custom-v2/S2_edit.png" alt="Custom v2 S2"></div>
+      </div>
+    </div>
+    <div class="scenario-analysis reveal reveal-d3">
+      <strong>关键差异：</strong>S2 是最考验精确性的场景——需要仅替换上衣而保持背景像素不变。模型直调的夹克风格偏通用，领口过渡粗糙。豆包的 Seedream 模型原生擅长精确局部编辑（4.75）。<span class="winner">Custom v2 追平豆包（4.75）</span>，靠的是"逐类别 Absolute Preservation 清单"——从面部到背包带到每个背景元素逐一列出保留项，并加入"collar-to-neck transition seamless"过渡指令，使 Gemini 在编辑精度上达到豆包水平。
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SLIDE 5: S3 POSTER ═══════════ -->
+<section class="slide scenario-slide" id="s4">
+  <div class="slide-content">
+    <h2 class="reveal">S3 学习场景：海报排版设计</h2>
+    <p class="scenario-desc reveal reveal-d1">用户输入：UC Berkeley Music Society Spring Auditions 活动海报，需精确渲染 5 行文字</p>
+    <div class="compare-grid reveal reveal-d2">
+      <div class="compare-cell">
+        <div class="label label-baseline">模型直调</div>
+        <span class="score-badge badge-baseline">4.88</span>
+        <div class="img-wrap"><img src="test/results/baseline/S3_poster.png" alt="Baseline S3"></div>
+      </div>
+      <div class="compare-cell">
+        <div class="label label-doubao">豆包</div>
+        <span class="score-badge badge-doubao">3.75</span>
+        <div class="img-wrap"><img src="test/results/competitor/S3_sm.png" alt="Doubao S3"></div>
+      </div>
+      <div class="compare-cell">
+        <div class="label label-skill">Hunyuan CoT</div>
+        <span class="score-badge badge-skill">5.00</span>
+        <div class="img-wrap"><img src="test/results/r2-skill-c/S3_poster.png" alt="Skill C S3"></div>
+      </div>
+      <div class="compare-cell">
+        <div class="label label-custom">Custom v2</div>
+        <span class="score-badge badge-custom">5.00</span>
+        <div class="img-wrap"><img src="test/results/custom-v2/S3_poster.png" alt="Custom v2 S3"></div>
+      </div>
+    </div>
+    <div class="scenario-analysis reveal reveal-d3">
+      <strong>关键差异：</strong>文字渲染是 AI 图生图的最大痛点。豆包（3.75）仅输出简单色块+白字，缺少视觉层次；时间格式也出错（6-9-PM）。模型直调本身表现优秀（4.88），Gemini 的文字渲染能力强于豆包。<span class="winner">Custom v2 和 Hunyuan CoT 均达到满分 5.0</span>——通过"text-first + Line 1-5 numbered text spec + no misspellings"三重约束确保所有 5 行文字零错误渲染，Art Deco 边框和金色乐器剪影完美呈现。
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SLIDE 6: S4 CHARACTER ═══════════ -->
+<section class="slide scenario-slide" id="s5">
+  <div class="slide-content">
+    <h2 class="reveal">S4 虚拟角色：原创概念设计</h2>
+    <p class="scenario-desc reveal reveal-d1">用户输入：Marvel 风格 Cyber-Knight 超级英雄全身概念图</p>
+    <div class="compare-grid reveal reveal-d2">
+      <div class="compare-cell">
+        <div class="label label-baseline">模型直调</div>
+        <span class="score-badge badge-baseline">4.50</span>
+        <div class="img-wrap"><img src="test/results/baseline/S4_character.png" alt="Baseline S4"></div>
+      </div>
+      <div class="compare-cell">
+        <div class="label label-doubao">豆包</div>
+        <span class="score-badge badge-doubao">4.25</span>
+        <div class="img-wrap"><img src="test/results/competitor/S4_sm.png" alt="Doubao S4"></div>
+      </div>
+      <div class="compare-cell">
+        <div class="label label-skill">Hunyuan CoT</div>
+        <span class="score-badge badge-skill">4.63</span>
+        <div class="img-wrap"><img src="test/results/r2-skill-c/S4_character.png" alt="Skill C S4"></div>
+      </div>
+      <div class="compare-cell">
+        <div class="label label-custom">Custom v2</div>
+        <span class="score-badge badge-custom">4.88</span>
+        <div class="img-wrap"><img src="test/results/custom-v2/S4_character.png" alt="Custom v2 S4"></div>
+      </div>
+    </div>
+    <div class="scenario-analysis reveal reveal-d3">
+      <strong>关键差异：</strong>豆包（4.25）输出 16:9 横版而非纵版概念图，且没有全身呈现。模型直调（4.50）创意细节丰富但横版。<span class="winner">Custom v2（4.88）</span>在多光源系统（蓝色环境光+橙色火焰+紫色辐射+背光轮廓）和环境文字渲染上最优秀——OSCORP 和 CYBERNETICS 霓虹招牌清晰可读，是所有方案中背景文字准确度最高的。披风内侧的紫色能量毛细管和盔甲关节处的黑色柔性网格网眼等细节均被忠实渲染。
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SLIDE 7: METHODOLOGY ═══════════ -->
+<section class="slide method-slide" id="s6">
+  <div class="slide-content">
+    <h2 class="reveal">Custom Skill v2 核心方法论</h2>
+    <div class="method-grid">
+      <div class="method-card reveal reveal-d1">
+        <h3>总-分-总 (General-Detail-General)</h3>
+        <p>融合自 Hunyuan CoT。每个 prompt 以一句话概述开头，中间按主→次细节展开，以一句"风格锚定"结尾。结尾句像标题一样统一整体美学方向，有效防止概念漂移。</p>
+      </div>
+      <div class="method-card reveal reveal-d2">
+        <h3>Text-First Hack + 逐行编号</h3>
+        <p>融合自 YouMind 社区模式。海报场景中先用 Line 1-5 逐行指定精确文字和排版属性，再描述设计元素。配合"no misspellings, no text warping"约束，实现 100% 文字准确率。</p>
+      </div>
+      <div class="method-card reveal reveal-d3">
+        <h3>逐类别保留清单</h3>
+        <p>融合自豆包 S2 的精确编辑思路。编辑场景中按 Face→Hair→Glasses→Hands→Lower body→Accessories→Background 分类列出保留项，确保像素级背景保真。</p>
+      </div>
+      <div class="method-card reveal reveal-d4">
+        <h3>材质+光源+胶片语言</h3>
+        <p>融合自 Image Cog 和 Skill 1 (nano-banana-prompting)。使用"Kodak Gold 200"/"indigo selvedge denim with contrast-orange chain stitching"/"matte gunmetal finish with metallic flake"等具体材质描述，以及多光源分解。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SLIDE 8: CONCLUSION ═══════════ -->
+<section class="slide conclusion-slide" id="s7">
+  <div class="slide-content">
+    <h2 class="reveal">结论与展望</h2>
+    <div class="conclusion-cards">
+      <div class="conclusion-card reveal reveal-d1">
+        <span class="big-num">4.91</span>
+        <h3>Custom v2 均分</h3>
+        <p>融合 6 种方法论的 prompt 重写框架，在所有 4 个场景中均达到或接近满分，特别是文字渲染和角色设计场景表现突出。</p>
+      </div>
+      <div class="conclusion-card reveal reveal-d2">
+        <span class="big-num">+18%</span>
+        <h3>vs 豆包</h3>
+        <p>在 S1 头像和 S3 海报场景中对豆包形成明显优势。S2 编辑场景追平豆包，证明通过精心设计的保留清单可弥补 Gemini 在局部编辑上的天然短板。</p>
+      </div>
+      <div class="conclusion-card reveal reveal-d3">
+        <span class="big-num">+12%</span>
+        <h3>vs 模型直调</h3>
+        <p>验证了 prompt engineering 的价值：同一模型（Gemini 3.1 Flash Image），仅通过 prompt 优化即可获得显著质量提升，无需更换模型或增加成本。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ NAVIGATION ═══════════ -->
+<nav class="nav-dots" id="navDots"></nav>
+
+<script>
+(function() {
+  const slides = document.querySelectorAll('.slide');
+  const nav = document.getElementById('navDots');
+  slides.forEach((s, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'nav-dot';
+    dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+    dot.addEventListener('click', () => s.scrollIntoView({ behavior: 'smooth' }));
+    nav.appendChild(dot);
+  });
+  const dots = nav.querySelectorAll('.nav-dot');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const idx = Array.from(slides).indexOf(e.target);
+        dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+      }
+    });
+  }, { threshold: 0.5 });
+  slides.forEach(s => observer.observe(s));
+
+  document.addEventListener('keydown', e => {
+    const cur = Array.from(slides).findIndex(s => {
+      const r = s.getBoundingClientRect();
+      return r.top >= -100 && r.top < window.innerHeight / 2;
+    });
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+      e.preventDefault();
+      if (cur < slides.length - 1) slides[cur + 1].scrollIntoView({ behavior: 'smooth' });
+    }
+    if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+      e.preventDefault();
+      if (cur > 0) slides[cur - 1].scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+})();
+</script>
+</body>
+</html>

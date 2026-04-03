@@ -1,0 +1,50 @@
+{
+  "S1_avatar": {
+    "scenario": "S1 Social - AI Avatar",
+    "skill": "Hunyuan-PromptEnhancer/CoT",
+    "original_prompt": "Turn my selfie into a 90s high school yearbook photo",
+    "rewritten_prompt": "A classic 1990s American high school yearbook portrait photo, transforming the uploaded selfie while preserving the subject's identity. The subject is centered in a head-and-shoulders composition with a warm, natural smile. They wear a navy crew-neck sweater over a plaid button-up collar shirt. The background is the iconic 90s yearbook laser-beam gradient pattern — vivid cyan and magenta light rays radiating outward against a deep blue field. The lighting is soft dual-umbrella studio flash, producing even illumination with gentle catch-lights. A warm tungsten color cast permeates the image with visible Kodak Gold 200 film grain. The overall style is authentic 1990s school photography with a nostalgic, wholesome warmth. Square 1:1 aspect ratio.",
+    "reference_image": "/Users/yufei/Cursor/image-gen-skill/test/samples/selfie.jpg",
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/opensource-5/S1_avatar.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T12:48:25.379845"
+  },
+  "S2_edit": {
+    "scenario": "S2 Personal - Image Editing",
+    "skill": "Hunyuan-PromptEnhancer/CoT",
+    "original_prompt": "I like this photo, but I would replace the upper-body with a denim jacket.",
+    "rewritten_prompt": "A local image edit that replaces only the upper-body clothing while keeping the entire rest of the photograph pixel-identical. The new garment is a classic mid-wash indigo denim trucker jacket with a fold-down collar, two chest flap pockets with brass snap buttons, and visible contrast orange stitching. The jacket is buttoned to the second-from-top button. All other elements remain unchanged: the subject's face, expression, hair, glasses, pose, hand positions, khaki trousers, backpack straps, and the complete background including the alpine lake, mountains, green hillside, wooden railing, gravel path, and overcast sky. The jacket's shadows follow the existing diffuse overcast lighting from above. The collar transitions seamlessly to the neck. Backpack straps rest naturally on top of the denim shoulders. The overall result is a seamless, photorealistic local garment replacement that is indistinguishable from an original photograph. Do not change the aspect ratio.",
+    "reference_image": "/Users/yufei/Cursor/image-gen-skill/test/samples/outfit.jpg",
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/opensource-5/S2_edit.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T12:49:02.876085"
+  },
+  "S3_poster": {
+    "scenario": "S3 Learning - Poster Design",
+    "skill": "Hunyuan-PromptEnhancer/CoT",
+    "original_prompt": "Create a high-contrast graphic design poster for 'UC Berkeley Music Society Spring Auditions'. Text to include: 'Date: April 15th', 'Location: Sproul Hall Room 202', 'Time: 6-9 PM'.",
+    "rewritten_prompt": "A high-contrast Art Deco graphic design event poster for a university music audition event. The dominant headline \"SPRING AUDITIONS\" is rendered in large metallic gold display typography with a 3D embossed effect at the center of the poster. Above it, \"UC BERKELEY MUSIC SOCIETY\" appears in bold geometric sans-serif, antique white, all caps. Below the headline, gold silhouette musical instruments — a violin, treble clef, and trumpet — are arranged symmetrically with scattered music notes. In the lower third, event details are displayed in clean sans-serif gold text: \"Date: April 15th\", \"Location: Sproul Hall Room 202\", \"Time: 6-9 PM\" — each on its own line, centered and clearly legible. The color palette is deep navy background with burnished gold accents and cream white text. Art Deco geometric borders with stepped corners frame the poster. Strict vertical symmetry with clear top-to-bottom visual hierarchy. The overall style is a professional, print-ready Art Deco graphic design poster with elegant typography and clean layout. Aspect ratio 3:4 portrait.",
+    "reference_image": null,
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/opensource-5/S3_poster.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T12:49:17.561940"
+  },
+  "S4_character": {
+    "scenario": "S4 Character - Concept Art",
+    "skill": "Hunyuan-PromptEnhancer/CoT",
+    "original_prompt": "Full body concept art of a new Marvel-style superhero. A futuristic 'Cyber-Knight' wearing sleek obsidian armor with glowing purple energy veins. The character is standing in a heroic pose amidst the ruins of a tech-noir New York City.",
+    "rewritten_prompt": "Full-body concept art of an original Marvel-inspired superhero called 'Cyber-Knight', standing heroically in a ruined cyberpunk cityscape. The character wears sleek obsidian-black powered armor with a matte finish and interlocking segmented plates covering the chest, shoulders, arms, and legs. Glowing purple-violet energy veins trace circuit-like patterns across all major armor sections, emanating from a bright triangular core on the chest plate. The fully enclosed helmet has a narrow glowing purple visor slit with angular, predatory swept-back edges. A dark metallic-fiber cape, tattered at the hem, billows to the right in the wind. The character stands in a wide heroic power-stance with fists clenched, shot from a low angle looking upward for an imposing effect. The setting is the ruins of tech-noir New York City at twilight — shattered skyscrapers, flickering neon signs (OSCORP, CYBERNETICS), cracked asphalt with puddles reflecting purple glow, and light rain falling. Dramatic backlighting from storm clouds creates a rim light silhouette, with orange fire-glow from the left and purple energy radiosity from the armor. The overall style is highly detailed cinematic digital concept art with a deep indigo and purple color palette. Aspect ratio 3:4 portrait. No text, no watermark.",
+    "reference_image": null,
+    "output": null,
+    "success": false,
+    "error": "Client error '429 Too Many Requests' for url 'https://yunwu.ai/v1beta/models/gemini-3.1-flash-image-preview:generateContent'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+    "text_response": null,
+    "timestamp": "2026-04-03T12:49:37.873205"
+  }
+}

@@ -1,39 +1,38 @@
 {
-  "_instructions": "TODO: 请在豆包网页端测试后填写以下评分（参考 reference/doubao-test-guide.md）",
   "S1_avatar": {
-    "prompt_adherence": null,
-    "visual_quality": null,
-    "aesthetics": null,
-    "scenario_specific": null,
-    "overall": null,
-    "notes": "TODO: 填写豆包 S1 测试结果描述"
+    "prompt_adherence": 3.5,
+    "visual_quality": 4.5,
+    "aesthetics": 4.0,
+    "scenario_specific": 3.5,
+    "overall": 3.88,
+    "notes": "90s vintage photo filter applied — yellowed edges, warm grain, period-appropriate feel. Face identity well preserved from selfie (glasses, hair, facial structure). BUT: background is a real classroom (chalkboard, desks, bulletin board) instead of the iconic 90s laser beam backdrop — the most recognizable yearbook trope from that era. Outfit unchanged from original selfie (gray zip-up sweater) rather than a period outfit (preppy sweater over plaid collar). Doubao interpreted '90s yearbook' literally as 'school setting' rather than the stylized laser portrait that defines the era's yearbook aesthetic. Has '豆包AI生成' watermark."
   },
   "S2_edit": {
-    "prompt_adherence": null,
-    "visual_quality": null,
-    "aesthetics": null,
-    "scenario_specific": null,
-    "overall": null,
-    "notes": "TODO: 填写豆包 S2 测试结果描述"
+    "prompt_adherence": 5.0,
+    "visual_quality": 4.5,
+    "aesthetics": 4.5,
+    "scenario_specific": 5.0,
+    "overall": 4.75,
+    "notes": "Excellent local edit — the best S2 result across all tested approaches. Denim trucker jacket replacement is clean and natural with good texture. Subject's pose is very faithful to the original (sitting against the wooden bench, looking off to the side). Background perfectly preserved: alpine lake, snow-capped mountains, green hillside, wooden railing, grass, gravel path — all pixel-perfect. Backpack straps visible over jacket. Face, hair, glasses all maintained. Very smooth collar-to-neck transition. Doubao's Seedream model excels at precise local image editing. Has '豆包AI生成' watermark."
   },
   "S3_poster": {
-    "prompt_adherence": null,
-    "visual_quality": null,
-    "aesthetics": null,
-    "scenario_specific": null,
-    "overall": null,
-    "notes": "TODO: 填写豆包 S3 测试结果描述"
+    "prompt_adherence": 4.0,
+    "visual_quality": 4.0,
+    "aesthetics": 3.5,
+    "scenario_specific": 3.5,
+    "overall": 3.75,
+    "notes": "Bold blue/orange diagonal split design with all text present: 'UC Berkeley Music Society Spring Auditions', 'Date: April 15th', 'Location: Sproul Hall Room 202', 'Time: 6-9-PM'. Time format uses extra hyphens ('6-9-PM' instead of '6-9 PM'). Design is very minimalist — large white sans-serif text on solid color blocks with a single music note icon. No decorative border, no instrument illustrations, no visual hierarchy beyond text size. Compared to Gemini's Art Deco designs with gold accents, geometric borders, and instrument silhouettes, this reads more like a quick social media graphic than a polished event poster. Functional but lacks sophistication."
   },
   "S4_character": {
-    "prompt_adherence": null,
-    "visual_quality": null,
-    "aesthetics": null,
-    "scenario_specific": null,
-    "overall": null,
-    "notes": "TODO: 填写豆包 S4 测试结果描述"
+    "prompt_adherence": 4.0,
+    "visual_quality": 4.5,
+    "aesthetics": 4.5,
+    "scenario_specific": 4.0,
+    "overall": 4.25,
+    "notes": "Obsidian armor with bright purple energy veins — core design matches prompt well. Dynamic low-angle composition with debris flying. Ruined city with neon signs in background. Purple energy emanating from chest area. Added creative elements not in prompt (katana swords, reaching pose). However: landscape 16:9 orientation instead of portrait 3:4, and framing is upper-body focused rather than full body concept art as specified. Energy pattern is more organic lightning than circuit-board traces. More anime/action-movie style than concept art. Dramatic and visually impressive. Has '豆包AI生成' watermark."
   },
   "phase": "competitor",
   "model": "豆包 (Doubao/Seedream)",
-  "method": "网页端手动测试",
-  "average_overall": null
+  "method": "网页端手动测试 — 使用豆包原始 prompt 处理",
+  "average_overall": 4.16
 }

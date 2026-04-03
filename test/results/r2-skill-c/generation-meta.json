@@ -1,0 +1,50 @@
+{
+  "S1_avatar": {
+    "scenario": "S1 Social - AI Avatar",
+    "skill": "Hunyuan CoT 总-分-总",
+    "original_prompt": "Turn my selfie into a 90s high school yearbook photo",
+    "rewritten_prompt": "A classic 1990s American high school yearbook portrait photo, transforming the uploaded selfie while preserving the subject's complete facial identity. The subject is centered in a head-and-shoulders composition with a warm, natural smile. They wear a navy crew-neck sweater layered over a plaid button-up collar shirt — the quintessential 90s preppy yearbook look. The background is the iconic 90s yearbook laser-beam gradient pattern — vivid cyan and magenta light rays radiating outward against a deep cobalt blue field. The lighting is soft dual-umbrella studio flash producing even illumination with gentle catch-lights in the eyes. A warm tungsten color cast and visible Kodak Gold 200 film grain permeate the image. Soft vignetting at corners as if scanned from a yearbook page. The overall style is authentic 1990s school photography with a nostalgic, wholesome warmth — square 1:1 format, no text, no modern elements.",
+    "reference_image": "/Users/yufei/Cursor/image-gen-skill/test/samples/selfie.jpg",
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/r2-skill-c/S1_avatar.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T15:00:09.360837"
+  },
+  "S2_edit": {
+    "scenario": "S2 Personal - Image Editing",
+    "skill": "Hunyuan CoT 总-分-总",
+    "original_prompt": "I like this photo, but I would replace the upper-body with a denim jacket.",
+    "rewritten_prompt": "A precise local image edit replacing only the upper-body clothing with a denim trucker jacket while keeping every other pixel of the photograph identical. The new garment is a classic mid-wash indigo denim trucker jacket with a structured fold-down collar, two chest flap pockets with brass snap buttons, visible contrast orange stitching along the yoke seams, and the jacket buttoned to the second-from-top button. The denim texture shows a natural twill weave with subtle fading at stress points. Everything else remains pixel-identical: the subject's face, expression, hair, glasses, skin tone, pose (seated, leaning against wooden bench, looking left), hand positions, khaki trousers, backpack with visible shoulder straps resting naturally on the denim shoulders, and the complete background — alpine lake, snow-capped mountains, green hillside, wooden railing, gravel path, overcast sky. The jacket's shadows follow the existing diffuse overcast lighting from above, and the collar transitions seamlessly to the neck. The result is a seamless, photorealistic local garment replacement indistinguishable from an original photograph. Do not change the aspect ratio.",
+    "reference_image": "/Users/yufei/Cursor/image-gen-skill/test/samples/outfit.jpg",
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/r2-skill-c/S2_edit.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T15:00:37.677534"
+  },
+  "S3_poster": {
+    "scenario": "S3 Learning - Poster Design",
+    "skill": "Hunyuan CoT 总-分-总",
+    "original_prompt": "Create a high-contrast graphic design poster for 'UC Berkeley Music Society Spring Auditions'. Text to include: 'Date: April 15th', 'Location: Sproul Hall Room 202', 'Time: 6-9 PM'.",
+    "rewritten_prompt": "A high-contrast Art Deco graphic design event poster for a university music audition event. The dominant headline \"SPRING AUDITIONS\" is rendered in large metallic gold display typography with a 3D embossed effect at the poster center. Above it, \"UC BERKELEY MUSIC SOCIETY\" appears in bold geometric sans-serif, antique white, all caps. Below the headline, event details are displayed in clean sans-serif gold text: \"Date: April 15th\", \"Location: Sproul Hall Room 202\", \"Time: 6-9 PM\" — each on its own centered line, clearly legible. Between the headline and details, gold silhouette musical instruments — a violin (left), treble clef (center), and trumpet (right) — are arranged symmetrically with scattered music notes. Art Deco geometric borders with stepped corners and fan motifs frame the poster. The color palette is deep navy background with burnished gold accents and cream white text. Strict vertical symmetry with clear top-to-bottom visual hierarchy. The overall style is a professional, print-ready Art Deco graphic design poster with elegant typography and clean layout — 3:4 portrait, no photograph, no misspellings.",
+    "reference_image": null,
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/r2-skill-c/S3_poster.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T15:01:11.455272"
+  },
+  "S4_character": {
+    "scenario": "S4 Character - Concept Art",
+    "skill": "Hunyuan CoT 总-分-总",
+    "original_prompt": "Full body concept art of a new Marvel-style superhero. A futuristic 'Cyber-Knight' wearing sleek obsidian armor with glowing purple energy veins. The character is standing in a heroic pose amidst the ruins of a tech-noir New York City.",
+    "rewritten_prompt": "Full-body concept art of an original Marvel-inspired superhero called 'Cyber-Knight', standing heroically in a ruined cyberpunk cityscape. The character wears sleek obsidian-black powered armor with a matte finish and interlocking segmented plates covering chest, shoulders, arms, and legs. Glowing purple-violet energy veins trace circuit-like patterns across all armor sections, emanating from a bright triangular core on the chest plate. The fully enclosed helmet has a narrow glowing purple visor with angular, predatory swept-back edges. A dark metallic-fiber cape, tattered at the hem, billows to the right in wind. The character stands in a wide heroic power-stance with fists clenched, shot from a low angle looking upward for an imposing effect. The setting is the ruins of tech-noir New York City at twilight — shattered skyscrapers with exposed steel ribbing, flickering neon signs (OSCORP, CYBERNETICS), cracked asphalt with puddles reflecting purple glow, and light rain falling. Dramatic cold-blue ambient fill from the sky, warm orange fire-glow from the left, purple energy radiosity from the armor, and strong backlight rim from storm clouds creating a silhouette halo. The overall style is highly detailed cinematic digital concept art with a deep indigo and purple palette — 3:4 portrait, no text, no watermark.",
+    "reference_image": null,
+    "output": null,
+    "success": false,
+    "error": "Client error '429 Too Many Requests' for url 'https://yunwu.ai/v1beta/models/gemini-3.1-flash-image-preview:generateContent'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+    "text_response": null,
+    "timestamp": "2026-04-03T15:01:44.151379"
+  }
+}

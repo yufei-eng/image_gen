@@ -1,0 +1,39 @@
+{
+  "S1_avatar": {
+    "prompt_adherence": 5.0,
+    "visual_quality": 5.0,
+    "aesthetics": 5.0,
+    "scenario_specific": 5.0,
+    "overall": 5.0,
+    "notes": "Excellent 90s yearbook. Perfect laser beam backdrop (cyan + magenta radiating against deep blue). Navy crew-neck sweater with green plaid collar exactly as prompted. Face identity well preserved — glasses, hair, facial structure all correct. Warm Kodak Gold tones with natural film grain. Square 1:1 format. No text overlays. The explicit Style/Lighting/Mood/Composition labels in the prompt translated perfectly."
+  },
+  "S2_edit": {
+    "prompt_adherence": 4.5,
+    "visual_quality": 4.5,
+    "aesthetics": 4.5,
+    "scenario_specific": 4.5,
+    "overall": 4.5,
+    "notes": "Clean denim trucker jacket replacement. Background perfectly preserved — alpine lake, mountains, green hillside, wooden railing, gravel path all intact. Backpack straps visible on jacket shoulders. Pose maintained (seated, looking left). Minor face smoothing/drift from original. Collar-to-neck transition natural. The explicit PRESERVE EXACTLY list effectively guided the model."
+  },
+  "S3_poster": {
+    "prompt_adherence": 5.0,
+    "visual_quality": 5.0,
+    "aesthetics": 5.0,
+    "scenario_specific": 5.0,
+    "overall": 5.0,
+    "notes": "Perfect Art Deco poster. All text letter-perfect: 'UC BERKELEY MUSIC SOCIETY', 'SPRING AUDITIONS' in 3D gold, 'Date: April 15th', 'Location: Sproul Hall Room 202', 'Time: 6-9 PM'. Gold geometric border with stepped corners. Violin (left), treble clef (center), trumpet (right) with scattered music notes. Navy + gold palette. Print-ready quality. Text-first approach with exact spelling instruction ensures perfect rendering."
+  },
+  "S4_character": {
+    "prompt_adherence": 4.5,
+    "visual_quality": 4.0,
+    "aesthetics": 4.5,
+    "scenario_specific": 4.0,
+    "overall": 4.25,
+    "notes": "Generated via MCP (gemini-2.5-flash) due to API rate limit. Full body Cyber-Knight in heroic wide stance. Obsidian armor with purple energy veins, triangular chest core, enclosed helmet with purple visor slit. Cape billowing right. Neon signs in background (partially legible). Ruined city with rain. Good but slightly less detailed than gemini-3.1-flash outputs — MCP fallback model difference visible."
+  },
+  "phase": "r2-skill-a",
+  "skill": "Image Cog (CellCog) Method",
+  "method": "Descriptive narrative with explicit Style/Lighting/Mood/Composition labels from CellCog's prompt guidelines",
+  "average_overall": 4.69,
+  "note": "S4 used gemini-2.5-flash via MCP fallback due to API rate limiting. S1/S2/S3 used gemini-3.1-flash-image-preview."
+}

@@ -1,0 +1,50 @@
+{
+  "S1_avatar": {
+    "scenario": "S1 Social - AI Avatar",
+    "skill": "YouMind Community Patterns",
+    "original_prompt": "Turn my selfie into a 90s high school yearbook photo",
+    "rewritten_prompt": "### Scene\n1990s American high school yearbook portrait photo, transforming the uploaded selfie.\n\n### Subject\n* Gender/age/identity: preserve exactly from input selfie\n* Hair, glasses, facial structure: unchanged from input\n* Expression: warm, natural smile with teeth showing\n* Clothing: navy blue crew-neck sweater with a plaid button-up shirt collar peeking out\n* Pose: head-and-shoulders, centered, slight head tilt\n\n### Environment\n* Background: iconic 90s yearbook laser-beam backdrop — vivid neon beams of cyan, electric blue, and hot magenta radiating outward from behind the subject against deep cobalt blue gradient\n\n### Lighting\n* Source: dual umbrella flash at 45° left and right\n* Quality: soft, even illumination with gentle catch-lights in eyes\n* White balance (K): 4800 (warm tungsten shift)\n\n### Camera\n* Film stock: Kodak Gold 200 — warm color shift, subtle film grain, slightly desaturated reds\n* Focal length: 85mm portrait lens\n* Aperture: f/5.6 (moderate depth of field)\n* Aspect ratio: 1:1 square\n* Soft vignetting at corners as if scanned from yearbook page\n\n### Negative\n* Modern digital effects, text overlays, name captions, beauty filters, CGI look",
+    "reference_image": "/Users/yufei/Cursor/image-gen-skill/test/samples/selfie.jpg",
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/r2-skill-b/S1_avatar.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T14:58:38.892727"
+  },
+  "S2_edit": {
+    "scenario": "S2 Personal - Image Editing",
+    "skill": "YouMind Community Patterns",
+    "original_prompt": "I like this photo, but I would replace the upper-body with a denim jacket.",
+    "rewritten_prompt": "### Task\nLocal image edit — replace ONLY the upper-body garment.\n\n### Target Change\n* New garment: classic Type III indigo denim trucker jacket\n* Wash: medium indigo with natural fading at stress points (elbows, chest pocket edges)\n* Details: two symmetrical chest flap pockets with antique brass snap buttons, exposed contrast-orange chain stitching along yoke seams, structured fold-down collar, buttoned to second-from-top button, visible twill weave with slub-yarn irregularities\n\n### Absolute Preservation\n* Face, eyes, mouth, nose, facial expression (looking left), hair, glasses, skin tone\n* Both hands and their exact positions\n* Lower body: khaki chinos\n* Backpack with visible shoulder straps\n* Wooden railing subject leans against, gravel path, green grass\n* Entire alpine lake, mountain range, snow-capped peaks, forested hillsides, overcast sky\n* Camera angle, focal length, depth of field, color grading — all identical\n\n### Transition Blending\n* Collar-to-neck: natural fabric-to-skin transition\n* Backpack straps: sit naturally on denim shoulders\n* Shadows: follow existing overcast ambient lighting (diffuse from above)\n* No hard shadow edges not in original\n\n### Negative\n* Adding objects, text, aspect ratio change, face smoothing, background alteration",
+    "reference_image": "/Users/yufei/Cursor/image-gen-skill/test/samples/outfit.jpg",
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/r2-skill-b/S2_edit.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T14:59:05.945480"
+  },
+  "S3_poster": {
+    "scenario": "S3 Learning - Poster Design",
+    "skill": "YouMind Community Patterns",
+    "original_prompt": "Create a high-contrast graphic design poster for 'UC Berkeley Music Society Spring Auditions'. Text to include: 'Date: April 15th', 'Location: Sproul Hall Room 202', 'Time: 6-9 PM'.",
+    "rewritten_prompt": "### Scene\nPrint-ready high-contrast Art Deco event poster, 3:4 portrait.\n\n### Color Palette\n* Background: deep navy blue (#0d1b2a)\n* Accents: metallic burnished gold (#b8860b)\n* Primary text: antique white (#faebd7)\n\n### Text Content (render EXACTLY as written)\n* Line 1 (top): \"UC BERKELEY MUSIC SOCIETY\" — antique white, bold geometric sans-serif, all-caps, tracking +50, largest header\n* Line 2 (center): \"SPRING AUDITIONS\" — metallic gold, 3D embossed effect + drop shadow, dramatic display serif, 3x size of Line 1\n* Line 3 (lower third): \"Date: April 15th\" — gold text, clean sans-serif, centered\n* Line 4: \"Location: Sproul Hall Room 202\" — same style below Line 3\n* Line 5: \"Time: 6-9 PM\" — same style below Line 4\n\n### Decorative Elements\n* Art Deco geometric border with stepped corners and fan motifs framing entire poster\n* Between Lines 2-3: symmetrical gold silhouette violin (left), treble clef (center), trumpet (right)\n* Scattered music notes and staff lines as accents\n\n### Composition\n* Strict vertical symmetry\n* Hierarchy: title → headline → instruments → details\n* Generous margins, no photograph, pure graphic design\n\n### Negative\n* Compression artifacts, misspellings, text warping, photographic elements",
+    "reference_image": null,
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/r2-skill-b/S3_poster.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T14:59:28.022703"
+  },
+  "S4_character": {
+    "scenario": "S4 Character - Concept Art",
+    "skill": "YouMind Community Patterns",
+    "original_prompt": "Full body concept art of a new Marvel-style superhero. A futuristic 'Cyber-Knight' wearing sleek obsidian armor with glowing purple energy veins. The character is standing in a heroic pose amidst the ruins of a tech-noir New York City.",
+    "rewritten_prompt": "### Scene\nFull-body concept art, original Marvel-inspired superhero 'Cyber-Knight' in ruined cyberpunk cityscape.\n\n### Character\n* Build: tall imposing figure (~6'4\"), heroic V-shaped torso\n* Armor: obsidian-black powered armor, matte gunmetal finish with metallic flake, overlapping segmented plates (chest piece, pauldrons, vambraces, cuisses, greaves) connected by flexible black under-armor mesh at joints\n* Energy veins: bioluminescent purple-violet circuit-board pathways across all armor sections, brightest at triangular arc reactor chest core, dimming at extremities, casting faint purple reflection\n* Helmet: fully enclosed, angular, predatory, swept-back aerodynamic fins, narrow horizontal purple visor\n* Cape: floor-length dark metallic smart-fabric, battle-damaged tattered lower edge, billowing right, interior shows faint purple energy capillaries\n\n### Pose\n* Heroic wide power-stance, feet shoulder-width on rubble, weight centered\n* Fists clenched at sides, chin tilted upward, shoulders back, chest presented\n\n### Camera\n* Angle: low (~15° below eye level), imposing monumental feel\n* Focal length: 24mm wide-angle, slight barrel distortion\n* Aspect ratio: 3:4 portrait\n\n### Environment\n* Setting: ruined tech-noir NYC at blue-hour twilight\n* Mid-ground: shattered skyscrapers with exposed steel ribbing\n* Background: flickering neon signs (OSCORP, CYBERNETICS)\n* Ground: cracked asphalt and concrete rubble, rain-slicked puddles reflecting purple glow\n* Atmosphere: light rain with visible foreground droplets\n\n### Lighting\n* Ambient: cold-blue fill from twilight sky\n* Accent: warm orange-amber from distant fires (camera-left)\n* Radiosity: purple bounce from energy veins\n* Backlight: strong rim from gap in storm clouds, divine halo silhouette effect\n\n### Negative\n* Text, watermarks, UI elements, anime style, landscape orientation",
+    "reference_image": null,
+    "output": null,
+    "success": false,
+    "error": "Client error '429 Too Many Requests' for url 'https://yunwu.ai/v1beta/models/gemini-3.1-flash-image-preview:generateContent'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+    "text_response": null,
+    "timestamp": "2026-04-03T14:59:46.030481"
+  }
+}

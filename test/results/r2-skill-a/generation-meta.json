@@ -1,0 +1,50 @@
+{
+  "S1_avatar": {
+    "scenario": "S1 Social - AI Avatar",
+    "skill": "Image Cog (CellCog) Method",
+    "original_prompt": "Turn my selfie into a 90s high school yearbook photo",
+    "rewritten_prompt": "Transform this selfie into a nostalgic 1990s American high school yearbook portrait. Style: Photorealistic school photography with Kodak Gold 200 film grain and warm color grading. Lighting: Classic dual-umbrella studio flash, soft and even, with gentle catch-lights in the eyes. Mood: Wholesome, nostalgic, authentic 90s school photo warmth. Composition: Head-and-shoulders, centered, 1:1 square format. The subject wears a navy crew-neck sweater with a plaid flannel collar peeking out — quintessential 90s prep. Background: Iconic 90s yearbook laser-beam gradient in cyan and magenta against deep blue. No modern elements, no text overlays, no name caption. Preserve facial identity exactly from input.",
+    "reference_image": "/Users/yufei/Cursor/image-gen-skill/test/samples/selfie.jpg",
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/r2-skill-a/S1_avatar.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T14:56:37.578102"
+  },
+  "S2_edit": {
+    "scenario": "S2 Personal - Image Editing",
+    "skill": "Image Cog (CellCog) Method",
+    "original_prompt": "I like this photo, but I would replace the upper-body with a denim jacket.",
+    "rewritten_prompt": "Edit this photograph: replace ONLY the upper-body clothing with a classic indigo denim trucker jacket. Style: Photorealistic, seamless local edit indistinguishable from the original photograph. Lighting: Match the existing overcast ambient lighting exactly — diffuse from above, soft shadows. Mood: Natural, casual outdoor feel unchanged from original. The jacket has two chest flap pockets with brass snap buttons, visible contrast stitching, and a fold-down collar buttoned to the second-from-top button. PRESERVE EXACTLY: face, expression, hair, glasses, skin tone, hand positions, lower body (khaki chinos), backpack straps, wooden railing, gravel path, alpine lake, mountains, sky, and all background elements. Backpack straps must sit naturally on the denim shoulders. Do not change the aspect ratio.",
+    "reference_image": "/Users/yufei/Cursor/image-gen-skill/test/samples/outfit.jpg",
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/r2-skill-a/S2_edit.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T14:57:02.568420"
+  },
+  "S3_poster": {
+    "scenario": "S3 Learning - Poster Design",
+    "skill": "Image Cog (CellCog) Method",
+    "original_prompt": "Create a high-contrast graphic design poster for 'UC Berkeley Music Society Spring Auditions'. Text to include: 'Date: April 15th', 'Location: Sproul Hall Room 202', 'Time: 6-9 PM'.",
+    "rewritten_prompt": "Create a professional event poster with high-contrast graphic design. Style: Art Deco inspired, elegant, print-ready quality. Mood: Prestigious, artistic, inviting — a university music event. Composition: 3:4 portrait, strict vertical symmetry, clear visual hierarchy. Color palette: Deep navy background with burnished gold accents and antique white text. Text to render EXACTLY (letter-perfect, no misspellings): \"UC BERKELEY MUSIC SOCIETY\" — top, bold geometric sans-serif, all caps, white. \"SPRING AUDITIONS\" — center, large metallic gold display typography with 3D embossed effect. \"Date: April 15th\" — lower section, gold on navy. \"Location: Sproul Hall Room 202\" — below date, same style. \"Time: 6-9 PM\" — below location, same style. Decorative elements: Art Deco geometric border with stepped corners, gold silhouette violin (left), treble clef (center), trumpet (right) between headline and details, scattered music notes. No photograph, pure graphic design.",
+    "reference_image": null,
+    "output": "/Users/yufei/Cursor/image-gen-skill/test/results/r2-skill-a/S3_poster.png",
+    "success": true,
+    "error": null,
+    "text_response": null,
+    "timestamp": "2026-04-03T14:57:43.139733"
+  },
+  "S4_character": {
+    "scenario": "S4 Character - Concept Art",
+    "skill": "Image Cog (CellCog) Method",
+    "original_prompt": "Full body concept art of a new Marvel-style superhero. A futuristic 'Cyber-Knight' wearing sleek obsidian armor with glowing purple energy veins. The character is standing in a heroic pose amidst the ruins of a tech-noir New York City.",
+    "rewritten_prompt": "Full body concept art of an original Marvel-inspired superhero 'Cyber-Knight'. Style: Digital concept art in the tradition of Ryan Meinerding and Andy Park — highly detailed, cinematic. Lighting: Dramatic cold-blue ambient fill from twilight sky, warm orange accent from distant fires camera-left, purple radiosity from armor energy veins, strong backlight rim from storm clouds creating a halo silhouette. Mood: Imposing, heroic, monumental — a lone sentinel amid destruction. Composition: Low angle (~15° below eye level), 24mm wide-angle, 3:4 portrait format. Character: Tall imposing figure in obsidian-black powered armor with matte gunmetal finish. Glowing purple-violet energy veins trace circuit-board pathways across all armor sections, brightest at a triangular arc reactor chest core. Fully enclosed angular helmet with narrow purple visor. Floor-length dark metallic cape, tattered at edges, billowing right. Pose: Wide heroic power-stance, fists clenched, chin tilted up, shoulders back. Setting: Ruined tech-noir NYC at twilight — shattered skyscrapers, OSCORP/CYBERNETICS neon signs, cracked wet asphalt reflecting purple glow, light rain with visible foreground droplets. No text, no watermarks.",
+    "reference_image": null,
+    "output": null,
+    "success": false,
+    "error": "Client error '429 Too Many Requests' for url 'https://yunwu.ai/v1beta/models/gemini-3.1-flash-image-preview:generateContent'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+    "text_response": null,
+    "timestamp": "2026-04-03T14:58:16.083756"
+  }
+}
