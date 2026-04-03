@@ -17,16 +17,17 @@ Automatically rewrites user image requests into optimized prompts using a fused 
 
 ## Results
 
-Tested across 4 scenarios (5-point scale):
+Tested across 4 scenarios (5-point scale), 5-way comparison:
 
 | Approach | S1 Avatar | S2 Edit | S3 Poster | S4 Character | **Average** |
 |----------|-----------|---------|-----------|--------------|-------------|
 | Gemini Direct (no skill) | 4.25 | 3.88 | 4.88 | 4.50 | 4.38 |
 | Doubao (Competitor) | 3.88 | 4.75 | 3.75 | 4.25 | 4.16 |
+| Migoo Current | 3.88 | 4.50 | 4.25 | 4.00 | 4.16 |
 | Best Open-Source Skill | 4.63 | 4.63 | 5.00 | 4.63 | 4.72 |
 | **This Custom Skill v2** | **5.00** | **4.75** | **5.00** | **4.88** | **4.91** |
 
-**+12% vs Gemini Direct** · **+18% vs Doubao** · **+4% vs Best Open-Source**
+**+12% vs Gemini Direct** · **+18% vs Doubao/Migoo** · **+4% vs Best Open-Source**
 
 ## Core Methodology
 
@@ -75,6 +76,7 @@ cp SKILL.md ~/.cursor/skills/image-gen/SKILL.md
 │       ├── r2-skill-a/         # Round 2: Image Cog method
 │       ├── r2-skill-b/         # Round 2: YouMind method
 │       ├── r2-skill-c/         # Round 2: Hunyuan CoT method
+│       ├── migoo-current/      # Migoo's current pipeline (4.16)
 │       ├── custom-v2/          # Custom Skill v2 (best — current)
 │       ├── custom/             # [Archive] v1 custom skill (4.57)
 │       └── opensource-*/       # [Archive] Round 1 open-source skills
@@ -83,4 +85,4 @@ cp SKILL.md ~/.cursor/skills/image-gen/SKILL.md
 
 ## Evaluation Report
 
-Open `report.html` in a browser to view the interactive comparison report with side-by-side image comparisons and qualitative analysis for all 4 scenarios.
+Open `report.html` in a browser to view the interactive comparison report with side-by-side image comparisons (5-way: Baseline / Doubao / Migoo Current / Hunyuan CoT / Custom v2) and qualitative analysis for all 4 scenarios. All images are base64-embedded, so the HTML file is fully self-contained.

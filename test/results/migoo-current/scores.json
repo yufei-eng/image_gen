@@ -1,0 +1,22 @@
+{
+  "S1_avatar": {
+    "prompt_adherence": 3.5, "visual_quality": 4.5, "aesthetics": 4.0, "scenario_specific": 3.5, "overall": 3.88,
+    "notes": "Cloud/marble-blue studio backdrop instead of the iconic 90s laser beams — misses the most recognizable yearbook trope. Navy blazer over blue dress shirt (formal look, not 90s preppy crew-neck + plaid). Added 'CLASS OF 1997' text at bottom — useful but not requested, and the year is fabricated. Face identity well preserved, natural warm smile. Good photo quality with soft studio lighting. Overall a respectable yearbook portrait but doesn't capture the specific '90s laser-beam' aesthetic."
+  },
+  "S2_edit": {
+    "prompt_adherence": 4.5, "visual_quality": 4.5, "aesthetics": 4.5, "scenario_specific": 4.5, "overall": 4.5,
+    "notes": "Clean denim trucker jacket replacement with visible chest pockets and natural denim texture. Background perfectly preserved — alpine lake, snow-capped mountains, forested hillside, wooden railing all intact. Backpack straps visible with chest buckle clip, draping naturally over jacket. Pose maintained (seated, looking left). Face and glasses preserved. Collar-to-neck transition smooth. Very competitive edit quality matching Custom v2 and Doubao."
+  },
+  "S3_poster": {
+    "prompt_adherence": 4.5, "visual_quality": 4.5, "aesthetics": 4.0, "scenario_specific": 4.0, "overall": 4.25,
+    "notes": "All text correctly rendered: 'UC BERKELEY MUSIC SOCIETY', 'SPRING AUDITIONS', 'Date: April 15th', 'Location: Sproul Hall Room 202', 'Time: 6-9 PM'. Yellow/navy modern geometric/abstract style with instrument illustrations (violins, trumpets, guitars, music notes, waveform graphics). Visually bold and contemporary. However: prompt asked for 'high-contrast' which is met, but the yellow/navy Bauhaus-style diverges from the Art Deco direction most other approaches took. No decorative border framing. Still a professional, usable poster."
+  },
+  "S4_character": {
+    "prompt_adherence": 3.5, "visual_quality": 4.5, "aesthetics": 4.5, "scenario_specific": 3.5, "overall": 4.0,
+    "notes": "Landscape 16:9 orientation instead of portrait 3:4 concept art format. Added a purple energy sword not in the original prompt. Neon signs read 'CYBERNETIC' and 'NEO-KYOTO' instead of the requested NYC setting with 'OSCORP/CYBERNETICS'. Obsidian armor with purple energy veins is on point, triangular chest core present. Cape flowing. Rain and ruined city atmosphere excellent. Very cinematic and visually impressive, but deviates from prompt specifics (wrong city, wrong orientation, added weapon)."
+  },
+  "phase": "migoo-current",
+  "skill": "Migoo Current",
+  "method": "Migoo's current integrated image generation pipeline",
+  "average_overall": 4.16
+}
