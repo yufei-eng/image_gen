@@ -24,7 +24,7 @@ image, pass the image via `image_url`.
 
 ```
 1. Classify scenario → pick rewrite template
-2. Rewrite prompt using 总-分-总 structure + template + Gemini rules
+2. Rewrite prompt using General-Detail-General structure + template + Gemini rules
 3. Call generate_imagen
 4. Show result; if user unhappy → surgical edit prompt (max 2 retries)
 ```
@@ -47,7 +47,7 @@ or a **transfer** (apply a style). Default to the most specific template that fi
 
 Apply ALL of these to every rewritten prompt:
 
-1. **总-分-总 (General-Detail-General) structure.** Start with a one-sentence overview.
+1. **General-Detail-General structure.** Start with a one-sentence overview.
    Then give details from primary to secondary importance. End with a one-sentence style
    summary that anchors the overall aesthetic.
 2. **Narrative, not keywords.** Write as if briefing a human artist. No tag-soup.
@@ -67,20 +67,20 @@ Apply ALL of these to every rewritten prompt:
 ## Template: Avatar / Style Transfer
 
 ```
-总: [Transformation verb] this [photo type] into a [era/style] [output format],
+Overview: [Transformation verb] this [photo type] into a [era/style] [output format],
 preserving the subject's complete facial identity.
 
-分-Primary: The subject is [pose/composition]. They wear [era-specific clothing with
+Detail-Primary: The subject is [pose/composition]. They wear [era-specific clothing with
 material descriptions — e.g., "navy crew-neck sweater with a plaid button-up collar"].
 
-分-Secondary: Background: [period-accurate backdrop with vivid details — e.g.,
+Detail-Secondary: Background: [period-accurate backdrop with vivid details — e.g.,
 "iconic 90s laser-beam gradient — cyan and magenta rays radiating against deep cobalt
 blue"]. Lighting: [type + color temperature — e.g., "dual-umbrella studio flash, soft
 even illumination, gentle catch-lights"]. Film: [stock + characteristics — e.g.,
 "Kodak Gold 200 — warm color shift, subtle grain, slightly desaturated reds"].
 [Aspect ratio].
 
-总-Anchor: The overall style is [≤15 word aesthetic summary].
+Anchor: The overall style is [≤15 word aesthetic summary].
 Negative: [exclusions].
 ```
 
@@ -92,14 +92,14 @@ explicit film stock, camera/lighting parameters, identity preservation, style an
 Structure using Target Change / Absolute Preservation / Transition Blending:
 
 ```
-总: A precise local image edit replacing only [target area] while keeping every
+Overview: A precise local image edit replacing only [target area] while keeping every
 other pixel of the photograph identical.
 
-分-Target Change:
+Detail-Target Change:
 The new [item] is a [full material description — wash, color, texture, details,
 buttons, stitching, fit]. [2-3 sentences of physical specifics].
 
-分-Absolute Preservation:
+Detail-Absolute Preservation:
 Everything else remains pixel-identical: [EXHAUSTIVE list organized by category]
 - Face & body: face, expression, hair, glasses, skin tone, pose, hand positions
 - Clothing: [unchanged garments]
@@ -107,11 +107,11 @@ Everything else remains pixel-identical: [EXHAUSTIVE list organized by category]
 - Background: [list every background element individually]
 - Camera: angle, focal length, depth of field, color grading
 
-分-Transition:
+Detail-Transition:
 The [item]-to-[body part] transition must be seamless. [Accessory] straps sit
 naturally on [new surface]. Shadows follow the existing [lighting direction].
 
-总-Anchor: The result is a seamless, photorealistic local [edit type] indistinguishable
+Anchor: The result is a seamless, photorealistic local [edit type] indistinguishable
 from an original photograph. Do not change the aspect ratio.
 Negative: Adding objects, text, face smoothing, background alteration, aspect ratio change.
 ```
@@ -124,21 +124,21 @@ replacement, explicit transition/blending instructions, negative constraints.
 Use text-first approach — specify ALL text content before any design:
 
 ```
-总: A [design style] event poster for [event description].
+Overview: A [design style] event poster for [event description].
 
-分-Text (render EXACTLY as written, letter-perfect):
+Detail-Text (render EXACTLY as written, letter-perfect):
 Line 1 (position): "[TEXT]" — [typography: weight, family, case, color, size relation]
 Line 2 (position): "[TEXT]" — [typography + any effects like "3D embossed"]
 Line 3 (position): "[TEXT]" — [typography]
 [Continue for all lines. Include "no misspellings, no text warping".]
 
-分-Design:
+Detail-Design:
 Color palette: [background color], [accent color], [text color].
 Decorative elements: [motifs, instruments, icons] arranged [spatial relationship].
 Border: [style description].
 Composition: [hierarchy — what draws the eye 1st, 2nd, 3rd]. Strict [symmetry type].
 
-总-Anchor: The overall style is a professional, print-ready [style] poster with
+Anchor: The overall style is a professional, print-ready [style] poster with
 elegant typography and clean layout. [Aspect ratio].
 Negative: Compression artifacts, misspellings, text warping, photographic elements.
 ```
@@ -151,9 +151,9 @@ palette with descriptive names, explicit spelling/warping constraints, hierarchy
 Structure from overview → character core → environment → lighting → anchoring:
 
 ```
-总: [Medium] of an original [genre] character called '[Name]', [one-sentence scene].
+Overview: [Medium] of an original [genre] character called '[Name]', [one-sentence scene].
 
-分-Character:
+Detail-Character:
 Build: [body type, height]. Armor/clothing: [every piece with material — "obsidian-black
 powered armor with matte gunmetal finish and metallic flake", segmented plates at
 specific body parts, flexible mesh at joints].
@@ -162,19 +162,19 @@ brightness gradient from core to extremities, reflection on nearby surfaces].
 Helmet/face: [visor style, shape].
 Cape/flow: [material, condition (tattered/pristine), direction, interior details].
 
-分-Pose & Camera:
+Detail-Pose & Camera:
 Pose: [specific stance, weight distribution, limb positions].
 Camera: [angle + degrees], [focal length], [perspective effect]. [Aspect ratio].
 
-分-Environment:
+Detail-Environment:
 Setting: [location + time]. Mid-ground: [architecture]. Background: [neon signs with
 EXACT text in quotes]. Ground: [surface + reflections]. Atmosphere: [weather].
 
-分-Lighting:
+Detail-Lighting:
 Ambient: [color + source]. Accent: [color + direction]. Character: [energy glow].
 Backlight: [rim light effect].
 
-总-Anchor: The overall style is [≤20 word rendering description with dominant palette].
+Anchor: The overall style is [≤20 word rendering description with dominant palette].
 No text, no watermark, no UI elements.
 ```
 
@@ -186,27 +186,27 @@ neon sign text in quotes, cape physics, multi-source lighting breakdown, style a
 Structure for e-commerce, mockup, and still-life photography:
 
 ```
-总: A [photography style] product shot of [object with material/finish description],
+Overview: A [photography style] product shot of [object with material/finish description],
 [one-sentence scene summary].
 
-分-Object:
+Detail-Object:
 The [product] has [shape, dimensions, material, color, finish — "matte white ceramic
 mug with a thin gold rim and embossed logo", "brushed aluminum laptop with space-gray
 anodized finish"]. Surface details: [texture, reflections, imperfections].
 
-分-Staging:
+Detail-Staging:
 Surface: [material — "Carrara marble slab", "reclaimed oak table", "seamless white
 cyclorama"]. Props: [complementary objects — "scattered coffee beans", "single green
 leaf", "soft linen napkin"]. Arrangement: [composition — "rule of thirds", "centered
 hero", "flat lay from above"].
 
-分-Lighting & Camera:
+Detail-Lighting & Camera:
 Lighting: [setup — "softbox at 45° camera-left, fill card camera-right, subtle
 backlight rim separating product from background"]. Color temperature: [warm/cool].
 Camera: [lens, aperture — "100mm macro, f/4, shallow DOF with product tack-sharp"].
 [Aspect ratio — typically 1:1 for e-commerce, 4:5 for social].
 
-总-Anchor: The overall style is [≤15 word description — e.g., "clean commercial
+Anchor: The overall style is [≤15 word description — e.g., "clean commercial
 product photography with magazine-grade lighting and crisp detail"].
 Negative: Text, watermarks, distracting background elements, unrealistic shadows.
 ```
@@ -217,20 +217,20 @@ Use for landscapes, food, illustrations, animals, architecture, social media,
 logos, and any request not matching specialized templates above:
 
 ```
-总: [Medium/style — "photorealistic image", "watercolor illustration",
+Overview: [Medium/style — "photorealistic image", "watercolor illustration",
 "3D rendered scene", "flat vector icon"] of [subject + one-sentence description].
 
-分-Subject:
+Detail-Subject:
 [Primary subject with physical details — shape, color, material, texture, expression,
 pose, clothing. 2-3 sentences. Be specific: "golden retriever puppy" not just "dog"].
 
-分-Environment & Composition:
+Detail-Environment & Composition:
 Setting: [location, time of day, season, weather].
 Composition: [framing — "centered", "rule of thirds", "wide establishing shot",
 "close-up macro"]. Foreground/midground/background layers if applicable.
 [Aspect ratio].
 
-分-Style & Mood:
+Detail-Style & Mood:
 Style: [specific reference — "Studio Ghibli watercolor", "National Geographic
 wildlife photography", "Bauhaus geometric poster", "Instagram flat-lay aesthetic"].
 Mood: [emotional tone — "warm and cozy", "dramatic and moody", "playful and bright"].
@@ -238,7 +238,7 @@ Lighting: [source, quality, color — "golden hour side-light", "overcast diffus
 "neon-lit night scene"].
 Color palette: [dominant + accent colors if important].
 
-总-Anchor: The overall style is [≤20 word aesthetic summary].
+Anchor: The overall style is [≤20 word aesthetic summary].
 Negative: [2-5 specific exclusions relevant to the style].
 ```
 
