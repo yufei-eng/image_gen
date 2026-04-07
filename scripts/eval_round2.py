@@ -193,7 +193,7 @@ SKILL_B_REWRITES = {
 
 
 # ────────────────────────────────────────────────────────
-# Skill C: Hunyuan PromptEnhancer CoT (总-分-总)
+# Skill C: Hunyuan PromptEnhancer CoT (General-Detail-General)
 # Core: General-Detail-General structure, primary-to-secondary ordering,
 # end with one-sentence style summary for style anchoring
 # Source: Hunyuan-PromptEnhancer/PromptEnhancer (3.7K stars)
@@ -201,68 +201,68 @@ SKILL_B_REWRITES = {
 
 SKILL_C_REWRITES = {
     "S1_avatar": (
-        # 总: Overview
+        # Overview
         "A classic 1990s American high school yearbook portrait photo, transforming the "
         "uploaded selfie while preserving the subject's complete facial identity. "
-        # 分: Primary details
+        # Detail: Primary
         "The subject is centered in a head-and-shoulders composition with a warm, natural "
         "smile. They wear a navy crew-neck sweater layered over a plaid button-up collar shirt — "
         "the quintessential 90s preppy yearbook look. "
-        # 分: Secondary details
+        # Detail: Secondary
         "The background is the iconic 90s yearbook laser-beam gradient pattern — vivid cyan "
         "and magenta light rays radiating outward against a deep cobalt blue field. "
         "The lighting is soft dual-umbrella studio flash producing even illumination with "
         "gentle catch-lights in the eyes. A warm tungsten color cast and visible Kodak Gold 200 "
         "film grain permeate the image. Soft vignetting at corners as if scanned from a yearbook page. "
-        # 总: Style summary
+        # Anchor: Style summary
         "The overall style is authentic 1990s school photography with a nostalgic, wholesome "
         "warmth — square 1:1 format, no text, no modern elements."
     ),
     "S2_edit": (
-        # 总: Overview
+        # Overview
         "A precise local image edit replacing only the upper-body clothing with a denim trucker "
         "jacket while keeping every other pixel of the photograph identical. "
-        # 分: Primary — the change
+        # Detail: Primary — the change
         "The new garment is a classic mid-wash indigo denim trucker jacket with a structured "
         "fold-down collar, two chest flap pockets with brass snap buttons, visible contrast "
         "orange stitching along the yoke seams, and the jacket buttoned to the second-from-top "
         "button. The denim texture shows a natural twill weave with subtle fading at stress points. "
-        # 分: Secondary — preservation
+        # Detail: Secondary — preservation
         "Everything else remains pixel-identical: the subject's face, expression, hair, glasses, "
         "skin tone, pose (seated, leaning against wooden bench, looking left), hand positions, "
         "khaki trousers, backpack with visible shoulder straps resting naturally on the denim "
         "shoulders, and the complete background — alpine lake, snow-capped mountains, green hillside, "
         "wooden railing, gravel path, overcast sky. The jacket's shadows follow the existing diffuse "
         "overcast lighting from above, and the collar transitions seamlessly to the neck. "
-        # 总: Style summary
+        # Anchor: Style summary
         "The result is a seamless, photorealistic local garment replacement indistinguishable "
         "from an original photograph. Do not change the aspect ratio."
     ),
     "S3_poster": (
-        # 总: Overview
+        # Overview
         "A high-contrast Art Deco graphic design event poster for a university music audition event. "
-        # 分: Primary — text
+        # Detail: Primary — text
         'The dominant headline "SPRING AUDITIONS" is rendered in large metallic gold display '
         'typography with a 3D embossed effect at the poster center. Above it, '
         '"UC BERKELEY MUSIC SOCIETY" appears in bold geometric sans-serif, antique white, all caps. '
         'Below the headline, event details are displayed in clean sans-serif gold text: '
         '"Date: April 15th", "Location: Sproul Hall Room 202", "Time: 6-9 PM" — each on '
         "its own centered line, clearly legible. "
-        # 分: Secondary — decorative
+        # Detail: Secondary — decorative
         "Between the headline and details, gold silhouette musical instruments — a violin (left), "
         "treble clef (center), and trumpet (right) — are arranged symmetrically with scattered "
         "music notes. Art Deco geometric borders with stepped corners and fan motifs frame the poster. "
         "The color palette is deep navy background with burnished gold accents and cream white text. "
         "Strict vertical symmetry with clear top-to-bottom visual hierarchy. "
-        # 总: Style summary
+        # Anchor: Style summary
         "The overall style is a professional, print-ready Art Deco graphic design poster "
         "with elegant typography and clean layout — 3:4 portrait, no photograph, no misspellings."
     ),
     "S4_character": (
-        # 总: Overview
+        # Overview
         "Full-body concept art of an original Marvel-inspired superhero called 'Cyber-Knight', "
         "standing heroically in a ruined cyberpunk cityscape. "
-        # 分: Primary — character
+        # Detail: Primary — character
         "The character wears sleek obsidian-black powered armor with a matte finish and "
         "interlocking segmented plates covering chest, shoulders, arms, and legs. Glowing "
         "purple-violet energy veins trace circuit-like patterns across all armor sections, "
@@ -271,13 +271,13 @@ SKILL_C_REWRITES = {
         "A dark metallic-fiber cape, tattered at the hem, billows to the right in wind. "
         "The character stands in a wide heroic power-stance with fists clenched, shot from a "
         "low angle looking upward for an imposing effect. "
-        # 分: Secondary — environment
+        # Detail: Secondary — environment
         "The setting is the ruins of tech-noir New York City at twilight — shattered skyscrapers "
         "with exposed steel ribbing, flickering neon signs (OSCORP, CYBERNETICS), cracked asphalt "
         "with puddles reflecting purple glow, and light rain falling. Dramatic cold-blue ambient "
         "fill from the sky, warm orange fire-glow from the left, purple energy radiosity from "
         "the armor, and strong backlight rim from storm clouds creating a silhouette halo. "
-        # 总: Style summary
+        # Anchor: Style summary
         "The overall style is highly detailed cinematic digital concept art with a deep indigo "
         "and purple palette — 3:4 portrait, no text, no watermark."
     ),
@@ -299,7 +299,7 @@ def skill_c_rewriter(scenario_id, scenario):
 SKILLS = [
     ("r2-skill-a", "Image Cog (CellCog) Method", skill_a_rewriter),
     ("r2-skill-b", "YouMind Community Patterns", skill_b_rewriter),
-    ("r2-skill-c", "Hunyuan CoT 总-分-总", skill_c_rewriter),
+    ("r2-skill-c", "Hunyuan CoT General-Detail-General", skill_c_rewriter),
 ]
 
 

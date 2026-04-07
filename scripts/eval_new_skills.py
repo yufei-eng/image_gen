@@ -128,10 +128,10 @@ def skill4_rewriter(scenario_id, scenario):
 
 # ────────────────────────────────────────────────────────
 # Skill 5: Hunyuan PromptEnhancer Chain-of-Thought style (3.7k stars)
-#   Method: Applies the CoT "总-分-总" (General-Detail-General) structure
+#   Method: Applies the CoT "General-Detail-General" structure
 #   from Hunyuan's system prompt:
 #   1. Intent preservation (subject/action/style/layout/attributes/text)
-#   2. 总-分-总 macro structure (overview → details → summary)
+#   2. General-Detail-General macro structure (overview → details → summary)
 #   3. Objective and neutral tone
 #   4. Primary-to-secondary element ordering
 #   5. Strict spatial/importance logic
@@ -140,10 +140,10 @@ def skill4_rewriter(scenario_id, scenario):
 
 SKILL5_REWRITES = {
     "S1_avatar": (
-        # 总: Overview
+        # Overview
         "A classic 1990s American high school yearbook portrait photo, transforming the "
         "uploaded selfie while preserving the subject's identity. "
-        # 分: Details (primary to secondary)
+        # Detail (primary to secondary)
         "The subject is centered in a head-and-shoulders composition with a warm, natural "
         "smile. They wear a navy crew-neck sweater over a plaid button-up collar shirt. "
         "The background is the iconic 90s yearbook laser-beam gradient pattern — vivid cyan "
@@ -151,15 +151,15 @@ SKILL5_REWRITES = {
         "The lighting is soft dual-umbrella studio flash, producing even illumination with "
         "gentle catch-lights. A warm tungsten color cast permeates the image with visible "
         "Kodak Gold 200 film grain. "
-        # 总: Style summary
+        # Anchor: Style summary
         "The overall style is authentic 1990s school photography with a nostalgic, wholesome "
         "warmth. Square 1:1 aspect ratio."
     ),
     "S2_edit": (
-        # 总: Overview
+        # Overview
         "A local image edit that replaces only the upper-body clothing while keeping the "
         "entire rest of the photograph pixel-identical. "
-        # 分: Details (primary to secondary)
+        # Detail (primary to secondary)
         "The new garment is a classic mid-wash indigo denim trucker jacket with a fold-down "
         "collar, two chest flap pockets with brass snap buttons, and visible contrast orange "
         "stitching. The jacket is buttoned to the second-from-top button. "
@@ -170,15 +170,15 @@ SKILL5_REWRITES = {
         "The jacket's shadows follow the existing diffuse overcast lighting from above. The "
         "collar transitions seamlessly to the neck. Backpack straps rest naturally on top of "
         "the denim shoulders. "
-        # 总: Style summary
+        # Anchor: Style summary
         "The overall result is a seamless, photorealistic local garment replacement that is "
         "indistinguishable from an original photograph. Do not change the aspect ratio."
     ),
     "S3_poster": (
-        # 总: Overview
+        # Overview
         "A high-contrast Art Deco graphic design event poster for a university music "
         "audition event. "
-        # 分: Details (primary to secondary)
+        # Detail (primary to secondary)
         'The dominant headline "SPRING AUDITIONS" is rendered in large metallic gold display '
         'typography with a 3D embossed effect at the center of the poster. Above it, '
         '"UC BERKELEY MUSIC SOCIETY" appears in bold geometric sans-serif, antique white, '
@@ -190,15 +190,15 @@ SKILL5_REWRITES = {
         "The color palette is deep navy background with burnished gold accents and cream "
         "white text. Art Deco geometric borders with stepped corners frame the poster. "
         "Strict vertical symmetry with clear top-to-bottom visual hierarchy. "
-        # 总: Style summary
+        # Anchor: Style summary
         "The overall style is a professional, print-ready Art Deco graphic design poster "
         "with elegant typography and clean layout. Aspect ratio 3:4 portrait."
     ),
     "S4_character": (
-        # 总: Overview
+        # Overview
         "Full-body concept art of an original Marvel-inspired superhero called 'Cyber-Knight', "
         "standing heroically in a ruined cyberpunk cityscape. "
-        # 分: Details (primary to secondary)
+        # Detail (primary to secondary)
         "The character wears sleek obsidian-black powered armor with a matte finish and "
         "interlocking segmented plates covering the chest, shoulders, arms, and legs. Glowing "
         "purple-violet energy veins trace circuit-like patterns across all major armor sections, "
@@ -212,7 +212,7 @@ SKILL5_REWRITES = {
         "purple glow, and light rain falling. Dramatic backlighting from storm clouds creates "
         "a rim light silhouette, with orange fire-glow from the left and purple energy radiosity "
         "from the armor. "
-        # 总: Style summary
+        # Anchor: Style summary
         "The overall style is highly detailed cinematic digital concept art with a deep indigo "
         "and purple color palette. Aspect ratio 3:4 portrait. No text, no watermark."
     ),

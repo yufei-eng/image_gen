@@ -5,7 +5,7 @@
     "aesthetics": 5.0,
     "scenario_specific": 5.0,
     "overall": 4.88,
-    "notes": "Excellent 90s yearbook. Laser beam backdrop radiates from center — more dramatic/artistic composition than Skill 4. Navy sweater + plaid collar, glasses, natural warm smile all correct. Warm Kodak tones and visible film grain. Face identity well preserved. The CoT '总-分-总' structure produced a clean, layered prompt that the model followed faithfully. The 'Style summary' sentence at the end ('authentic 1990s school photography with nostalgic, wholesome warmth') provided strong style anchoring."
+    "notes": "Excellent 90s yearbook. Laser beam backdrop radiates from center — more dramatic/artistic composition than Skill 4. Navy sweater + plaid collar, glasses, natural warm smile all correct. Warm Kodak tones and visible film grain. Face identity well preserved. The CoT 'General-Detail-General' structure produced a clean, layered prompt that the model followed faithfully. The 'Style summary' sentence at the end ('authentic 1990s school photography with nostalgic, wholesome warmth') provided strong style anchoring."
   },
   "S2_edit": {
     "prompt_adherence": 4.5,
@@ -29,11 +29,11 @@
     "aesthetics": 4.5,
     "scenario_specific": 4.5,
     "overall": 4.5,
-    "notes": "Generated via MCP (gemini-2.5-flash) due to API rate limit. Full body Cyber-Knight, wide heroic stance, low angle. Obsidian armor with bright purple veins, triangular chest core. Smooth helmet with purple visor. Cape tattered and billowing right. OSCORP neon sign on left, CYBERNETICS on right — both more legible than Skill 4's S4. Ruined city with rain, fires, puddle reflections. The CoT '总-分-总' structure placed the style summary at the end ('cinematic digital concept art with deep indigo and purple palette'), which effectively anchored the overall aesthetic."
+    "notes": "Generated via MCP (gemini-2.5-flash) due to API rate limit. Full body Cyber-Knight, wide heroic stance, low angle. Obsidian armor with bright purple veins, triangular chest core. Smooth helmet with purple visor. Cape tattered and billowing right. OSCORP neon sign on left, CYBERNETICS on right — both more legible than Skill 4's S4. Ruined city with rain, fires, puddle reflections. The CoT 'General-Detail-General' structure placed the style summary at the end ('cinematic digital concept art with deep indigo and purple palette'), which effectively anchored the overall aesthetic."
   },
   "phase": "opensource-5",
   "skill": "Hunyuan-PromptEnhancer/PromptEnhancer (3.7k stars) — CoT method",
-  "method": "Chain-of-Thought '总-分-总' (General-Detail-General) rewriting: overview sentence → primary-to-secondary details → one-sentence style summary",
+  "method": "Chain-of-Thought 'General-Detail-General' (General-Detail-General) rewriting: overview sentence → primary-to-secondary details → one-sentence style summary",
   "average_overall": 4.63,
   "note": "S4 used gemini-2.5-flash via MCP fallback due to API rate limiting. S1/S2/S3 used gemini-3.1-flash-image-preview."
 }

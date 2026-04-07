@@ -4,7 +4,7 @@ Prompt optimization skill for Gemini 3.1 Flash Image (Nano Banana 2) that signif
 
 ## What It Does
 
-Automatically rewrites user image requests into optimized prompts using a fused **总-分-总 (General-Detail-General)** methodology:
+Automatically rewrites user image requests into optimized prompts using a fused **General-Detail-General** methodology:
 
 | Scenario | Example | Technique |
 |----------|---------|-----------|
@@ -13,7 +13,7 @@ Automatically rewrites user image requests into optimized prompts using a fused 
 | **Poster / Typography** | "Create a concert poster with text..." | Text-first hack + per-line numbered specs + no-misspelling constraint |
 | **Character Design** | "Full body concept art of a superhero" | Material specificity + multi-source lighting + camera language + neon text in quotes |
 | **Product / Object** | "Product shot of sneakers on marble" | Object material + staging + commercial lighting setup |
-| **General Scene** *(fallback)* | "A sunset", "cute panda", "logo design"... | Universal 总-分-总 with subject/environment/style/mood sections |
+| **General Scene** *(fallback)* | "A sunset", "cute panda", "logo design"... | Universal General-Detail-General with subject/environment/style/mood sections |
 
 ## Results
 
@@ -33,7 +33,7 @@ Tested across 4 scenarios (5-point scale), 5-way comparison:
 
 Custom Skill v2 fuses 6 prompt engineering approaches:
 
-1. **总-分-总 structure** (from Hunyuan CoT) — overview → primary-to-secondary details → style anchoring sentence
+1. **General-Detail-General structure** (from Hunyuan CoT) — overview → primary-to-secondary details → style anchoring sentence
 2. **Text-First Hack + line numbering** (from YouMind community) — specify all text before design for 100% text accuracy
 3. **Per-category preservation lists** (from Doubao's editing strength) — exhaustive Face→Hair→Glasses→Background itemization
 4. **Material/lighting/film language** (from Image Cog + Skill 1) — "Kodak Gold 200", "indigo selvedge denim", "matte gunmetal with metallic flake"

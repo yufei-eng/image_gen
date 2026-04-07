@@ -5,7 +5,7 @@
     "aesthetics": 4.0,
     "scenario_specific": 3.5,
     "overall": 3.88,
-    "notes": "90s vintage photo filter applied — yellowed edges, warm grain, period-appropriate feel. Face identity well preserved from selfie (glasses, hair, facial structure). BUT: background is a real classroom (chalkboard, desks, bulletin board) instead of the iconic 90s laser beam backdrop — the most recognizable yearbook trope from that era. Outfit unchanged from original selfie (gray zip-up sweater) rather than a period outfit (preppy sweater over plaid collar). Doubao interpreted '90s yearbook' literally as 'school setting' rather than the stylized laser portrait that defines the era's yearbook aesthetic. Has '豆包AI生成' watermark."
+    "notes": "90s vintage photo filter applied — yellowed edges, warm grain, period-appropriate feel. Face identity well preserved from selfie (glasses, hair, facial structure). BUT: background is a real classroom (chalkboard, desks, bulletin board) instead of the iconic 90s laser beam backdrop — the most recognizable yearbook trope from that era. Outfit unchanged from original selfie (gray zip-up sweater) rather than a period outfit (preppy sweater over plaid collar). Doubao interpreted '90s yearbook' literally as 'school setting' rather than the stylized laser portrait that defines the era's yearbook aesthetic. Has 'Doubao AI Generated' watermark."
   },
   "S2_edit": {
     "prompt_adherence": 5.0,
@@ -13,7 +13,7 @@
     "aesthetics": 4.5,
     "scenario_specific": 5.0,
     "overall": 4.75,
-    "notes": "Excellent local edit — the best S2 result across all tested approaches. Denim trucker jacket replacement is clean and natural with good texture. Subject's pose is very faithful to the original (sitting against the wooden bench, looking off to the side). Background perfectly preserved: alpine lake, snow-capped mountains, green hillside, wooden railing, grass, gravel path — all pixel-perfect. Backpack straps visible over jacket. Face, hair, glasses all maintained. Very smooth collar-to-neck transition. Doubao's Seedream model excels at precise local image editing. Has '豆包AI生成' watermark."
+    "notes": "Excellent local edit — the best S2 result across all tested approaches. Denim trucker jacket replacement is clean and natural with good texture. Subject's pose is very faithful to the original (sitting against the wooden bench, looking off to the side). Background perfectly preserved: alpine lake, snow-capped mountains, green hillside, wooden railing, grass, gravel path — all pixel-perfect. Backpack straps visible over jacket. Face, hair, glasses all maintained. Very smooth collar-to-neck transition. Doubao's Seedream model excels at precise local image editing. Has 'Doubao AI Generated' watermark."
   },
   "S3_poster": {
     "prompt_adherence": 4.0,
@@ -29,10 +29,10 @@
     "aesthetics": 4.5,
     "scenario_specific": 4.0,
     "overall": 4.25,
-    "notes": "Obsidian armor with bright purple energy veins — core design matches prompt well. Dynamic low-angle composition with debris flying. Ruined city with neon signs in background. Purple energy emanating from chest area. Added creative elements not in prompt (katana swords, reaching pose). However: landscape 16:9 orientation instead of portrait 3:4, and framing is upper-body focused rather than full body concept art as specified. Energy pattern is more organic lightning than circuit-board traces. More anime/action-movie style than concept art. Dramatic and visually impressive. Has '豆包AI生成' watermark."
+    "notes": "Obsidian armor with bright purple energy veins — core design matches prompt well. Dynamic low-angle composition with debris flying. Ruined city with neon signs in background. Purple energy emanating from chest area. Added creative elements not in prompt (katana swords, reaching pose). However: landscape 16:9 orientation instead of portrait 3:4, and framing is upper-body focused rather than full body concept art as specified. Energy pattern is more organic lightning than circuit-board traces. More anime/action-movie style than concept art. Dramatic and visually impressive. Has 'Doubao AI Generated' watermark."
   },
   "phase": "competitor",
-  "model": "豆包 (Doubao/Seedream)",
-  "method": "网页端手动测试 — 使用豆包原始 prompt 处理",
+  "model": "Doubao (Seedream)",
+  "method": "Manual web-based testing — using Doubao's native prompt processing",
   "average_overall": 4.16
 }
